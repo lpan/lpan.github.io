@@ -1,0 +1,35 @@
+{
+  "name": "im-lawrence",
+  "version": "0.0.0",
+  "description": "Lawrence Pan's profile and resume",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorix-lpan/im-lawrence.git"
+  },
+  "keywords": [
+    "Profile",
+    "Lawrence",
+    "Pan",
+    "Resume"
+  ],
+  "author": "Lawrence Pan <lawrencefeipan@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lorix-lpan/im-lawrence/issues"
+  },
+  "homepage": "https://github.com/lorix-lpan/im-lawrence#readme",
+  "dependencies": {
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^5.0.0",
+    "babel-loader": "^6.2.1",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^4.2.3"
+  }
+}
