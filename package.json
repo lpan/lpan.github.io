@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "Lawrence Pan's profile and resume",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lorix-lpan/im-lawrence.git"
