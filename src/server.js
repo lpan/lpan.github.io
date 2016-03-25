@@ -24,6 +24,7 @@ import { match, RouterContext } from 'react-router';
 
 // Import required modules
 import routes from './app/routes';
+import WrapperComponent from './app/helpers/WrapperComponent';
 
 // Apply server public assets and routes
 app.use(Express.static(path.resolve(__dirname, '../static')));
@@ -69,7 +70,9 @@ app.use((req, res, next) => {
     }
 
     const initialView = renderToString(
-      <RouterContext {...renderProps} />
+      <WrapperComponent radiumConfig={{ userAgent: req.headers['user-agent'] }}>
+        <RouterContext {...renderProps} />
+      </WrapperComponent>
     );
 
     return res.status(200).end(renderFullPage(initialView));
