@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node index.js",
     "start:prod": "cross-env NODE_ENV=production node index.js",
-    "bs": "npm run clean && npm run build && sudo systemctl restart perfect-schedule",
+    "bs": "npm run clean && npm run build && sudo systemctl restart im-lawrence.service",
     "minify": "cleancss -o static/css/app.min.css static/css/app.css",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js && npm run minify",
     "clean": "rimraf static/dist",
