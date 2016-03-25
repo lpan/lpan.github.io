@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import TransitionGroup from 'react-addons-css-transition-group';
 import { StyleRoot } from 'radium';
 
 import NavBar from './layouts/NavBar/NavBar';
@@ -13,7 +14,16 @@ function App(props) {
   return (
     <StyleRoot>
       <NavBar />
-      {props.children}
+      <TransitionGroup
+        component="div"
+        transitionName="page"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={500}
+      >
+        {React.cloneElement(props.children, {
+          key: props.location.pathname,
+        })}
+      </TransitionGroup>
       <div style={spaceStyle} />
       <Footer />
     </StyleRoot>
@@ -22,6 +32,7 @@ function App(props) {
 
 App.propTypes = {
   children: PropTypes.object.isRequired,
+  location: PropTypes.object,
 };
 
 export default App;

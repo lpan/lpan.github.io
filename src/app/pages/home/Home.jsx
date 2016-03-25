@@ -1,28 +1,18 @@
 import React from 'react';
-import Radium from 'radium';
-import FitText from 'react-fittext';
-
-const titleStyle = {
-  textAlign: 'center',
-  margin: '1em 0 0 0',
-  '@media (max-width: 768px) and (orientation:portrait)': {
-    margin: '4.5em 0 0 0',
-  },
-};
+import FitTitle from '../../shared/FitTitle/FitTitle';
 
 function Home() {
   return (
     <div>
-      <FitText>
-        <p style={titleStyle}>Hi, I am Lawrence</p>
-      </FitText>
-      <FitText compressor={5}>
-        <p style={titleStyle}>
-          I am a Programmer, Problem Solver, and Entrepreneur studying at Marianopolis College
-        </p>
-      </FitText>
+      <FitTitle
+        text="Hi, I am Lawrence"
+      />
+      <FitTitle
+        text="I am a Programmer, Problem Solver, and Entrepreneur studying at Marianopolis College"
+        size={5}
+      />
     </div>
   );
 }
 
-export default Radium(Home);
+export default Home;

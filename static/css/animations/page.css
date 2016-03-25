@@ -1,0 +1,31 @@
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+.page-enter {
+  opacity: 0.01;
+  animation: scaleUp .5s ease-in;
+}
+
+.page-enter.page-enter-active {
+  opacity: 1;
+}
+
+.page-leave {
+  opacity: 1;
+  transition: opacity 0s ease-in;
+}
+
+.page-leave.page-leave-active {
+  opacity: 0;
+}
