@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin+Sketch);
+@import url("flexboxgrid.min.css");
+
+html, body {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  font-family: "Cabin Sketch";
+  width: auto !important;
+  height: 100%;
+  overflow-x: hidden !important;
+}
+
+#root {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-size: x-large;
+}
+
+@media (max-width: 1800px) {
+  body {
+    font-size: large;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: medium;
+  }
+}

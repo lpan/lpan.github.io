@@ -10,5 +10,6 @@
    "rules": {
     "quotes": "off",
     "no-console": "off",
+    "new-cap": "off",
    }
 }
