@@ -7,7 +7,7 @@ function About() {
     <div>
       <FitTitle
         text="Want to Know More About Lawrence?"
-        size={1.2}
+        size={1.5}
       />
       <div className="row center-xs">
         <div className="row col-md-8 center-xs around-xs" style={{ marginTop: '2em' }}>
