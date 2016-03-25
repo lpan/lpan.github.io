@@ -1,20 +1,19 @@
 import React, { PropTypes } from 'react';
-import Isvg from 'react-inlinesvg';
 
 const linkStyle = {
-  marginLeft: '0.5em',
+  marginLeft: '1em',
   color: 'black',
-  display: 'inline',
 };
 
-const svgStyle = {
-  display: 'inline',
+const iconStyle = {
+  height: '2em',
+  width: '2em',
 };
 
 function FontButton(props) {
   return (
     <a style={linkStyle} href={props.link} target="_blank">
-      <Isvg style={svgStyle} src={`/icons/${props.name}.svg`} />
+      <img style={iconStyle} src={`/icons/${props.name}.png`} />
     </a>
   );
 }
