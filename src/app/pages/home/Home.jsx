@@ -4,10 +4,9 @@ import FitText from 'react-fittext';
 
 const titleStyle = {
   textAlign: 'center',
-  margin: '0 0 0 0',
-  marginTop: '1em',
+  margin: '1em 0 0 0',
   '@media (max-width: 768px) and (orientation:portrait)': {
-    marginTop: '4em',
+    margin: '4.5em 0 0 0',
   },
 };
 
