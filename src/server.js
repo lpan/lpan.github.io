@@ -38,10 +38,12 @@ function renderFullPage(html) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Lawrence Pan's Personal Website and Resume">
+        <meta name="author" content="Lawrence Pan">
+        <meta name="theme-color" content="#00000">
         <title>Lawrence Pan</title>
         <link rel="shortcut icon" href="/img/icon.png" />
         <link rel="stylesheet" href=${cssPath} />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
       </head>
       <body>
         <div id="root">${html}</div>
