@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import Radium from 'radium';
 
 const tabStyle = {
@@ -10,10 +11,15 @@ const tabStyle = {
   },
 };
 
+const linkStyle = {
+  color: 'black',
+};
 
 function NavTab(props) {
   return (
-    <li style={tabStyle}>{props.name}</li>
+    <Link style={linkStyle} to={`/${props.name}`}>
+      <li style={tabStyle}>{props.name}</li>
+    </Link>
   );
 }
 
