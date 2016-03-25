@@ -1,25 +1,32 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import { IndexLink } from 'react-router';
 import Radium from 'radium';
 
-const tabStyle = {
+const linkStyle = {
   display: 'inline-block',
   marginRight: '1.2em',
   cursor: 'pointer',
+  textDecoration: 'none',
+  color: 'black',
+};
+
+const hoverStyle = {
   ':hover': {
     textDecoration: 'underline',
   },
 };
 
-const linkStyle = {
-  color: 'black',
-};
+const filter = name => name === 'Home' ? '' : name;
 
 function NavTab(props) {
   return (
-    <Link style={linkStyle} to={`/${props.name}`}>
-      <li style={tabStyle}>{props.name}</li>
-    </Link>
+    <IndexLink
+      activeStyle={{ textDecoration: 'underline' }}
+      style={linkStyle}
+      to={`/${filter(props.name)}`}
+    >
+      <span style={hoverStyle}>{props.name}</span>
+    </IndexLink>
   );
 }
 

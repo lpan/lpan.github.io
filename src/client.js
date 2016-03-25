@@ -3,11 +3,15 @@ import routes from './app/routes';
 import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router';
 
+import WrapperComponent from './app/helpers/WrapperComponent';
+
 const history = browserHistory;
 const dest = document.getElementById('root');
 
 render((
-  <Router history={history} routes={routes} />
+  <WrapperComponent>
+    <Router history={history} routes={routes} />
+  </WrapperComponent>
 ), dest);
 
 if (process.env.NODE_ENV !== 'production') {

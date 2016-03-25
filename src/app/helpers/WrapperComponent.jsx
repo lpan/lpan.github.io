@@ -13,7 +13,7 @@ function WrapperComponent(props) {
 
 WrapperComponent.propTypes = {
   children: PropTypes.object.isRequired,
-  radiumConfig: PropTypes.object.isRequired,
+  radiumConfig: PropTypes.object,
 };
 
 export default Radium(WrapperComponent);

@@ -9,7 +9,6 @@ const routes = (
   <Route path="/" component={App} >
     <IndexRoute component={Home} />
     <Route path="about" component={About} />
-    <Redirect from="home" to="/" />
   </Route>
 );
 
