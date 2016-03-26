@@ -26,6 +26,7 @@
   "author": "Lawrence Pan <lawrencefeipan@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
+    "animate.css": "^3.5.1",
     "express": "^4.13.4",
     "flexboxgrid": "^6.3.0",
     "history": "^1.17.0",

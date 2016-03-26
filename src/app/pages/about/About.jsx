@@ -1,10 +1,16 @@
 import React from 'react';
 import FitTitle from '../../shared/FitTitle/FitTitle';
 import LinkButton from '../../shared/LinkButton/LinkButton';
+import BackArrow from './BackArrow';
+
+const animateStyle = {
+  position: 'absolute',
+  width: '100%',
+};
 
 function About() {
   return (
-    <div>
+    <div style={animateStyle}>
       <FitTitle
         text="Want to Know More About Lawrence?"
         size={1.5}

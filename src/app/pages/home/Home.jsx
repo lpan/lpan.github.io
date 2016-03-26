@@ -1,9 +1,14 @@
 import React from 'react';
 import FitTitle from '../../shared/FitTitle/FitTitle';
 
+const animateStyle = {
+  position: 'absolute',
+  width: '100%',
+};
+
 function Home() {
   return (
-    <div>
+    <div style={animateStyle}>
       <FitTitle
         text="Hi, I am Lawrence"
         fontFamily="Cabin Sketch"
