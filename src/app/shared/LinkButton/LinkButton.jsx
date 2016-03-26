@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const linkStyle = {
   textDecoration: 'none',
   color: 'black',
-  fontSize: '4vw',
+  fontSize: '1.5em',
 };
 
 function LinkButton(props) {

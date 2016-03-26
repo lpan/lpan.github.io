@@ -16,7 +16,7 @@ function About() {
         fontFamily="Cabin Sketch"
       />
       <div className="row center-xs">
-        <div className="row col-md-8 col-xs-10 center-xs around-xs" style={{ marginTop: '2em' }}>
+        <div className="row col-md-8 col-xs-10 center-xs around-xs" style={{ marginTop: '3em' }}>
           <LinkButton text="Fun Facts" link="/About/Fun" />
           <LinkButton text="Short Bio" link="/About/Bio" />
         </div>
