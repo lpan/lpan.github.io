@@ -7,6 +7,7 @@ const contStyle = {
   display: 'inline-block',
   cursor: 'pointer',
   marginRight: '0.5em',
+  marginTop: '0.3em',
   padding: '0 0.3em 0 0.3em',
   ':hover': {
     backgroundColor: 'black',
