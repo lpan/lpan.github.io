@@ -10,9 +10,12 @@ const animateStyle = {
 };
 
 const paraStyle = {
-  marginTop: '2em',
   fontSize: '1.5em',
+  marginTop: '2em',
   textAlign: 'justify',
+  '@media (max-width: 1400px)': {
+    marginTop: '0em',
+  },
   '@media (max-width: 768px) and (orientation:portrait)': {
     marginTop: '0.5em',
   },
