@@ -1,8 +1,7 @@
 @import url("animate.min.css");
 
 .page-enter {
-  opacity: 0.01;
-  animation: bounceInUp .5s ease-in;
+  animation: slideInRight .5s ease-in;
 }
 
 .page-enter.page-enter-active {
@@ -10,7 +9,6 @@
 }
 
 .page-leave {
-  opacity: 1;
   animation: zoomOut .5s ease-in;
 }
 
