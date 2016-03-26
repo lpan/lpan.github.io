@@ -11,7 +11,7 @@ function App(props) {
       <NavBar />
       <TransitionGroup
         component="div"
-        transitionName="page"
+        transitionName={`route${(props.location.pathname.match(/\//g) || []).length}`}
         transitionEnterTimeout={500}
         transitionLeaveTimeout={500}
       >

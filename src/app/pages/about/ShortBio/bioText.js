@@ -1,0 +1,4 @@
+const bioText = `
+Lawrence Pan (Fei Pan) is an aspiring young programmer and entrepreneur studying Honours Pure and Applied Science at Marianopolis College. Lawrence considers himself as a hardcore Fullstack JavaScript developer. He is able to design Front-End Single Page Application with AngularJS or ReactJS as well as Web APIs with ExpressJS and Socket.io. Lawrence is also not stupid. In fact, he came in fourth in the Canadian Open Mathematics Challenge in the Province of Quebec and had a perfect score in the Canadian Computing Competition. Lawrence is not the type of anti-social programming geek who prefers to do everything on his own. He loves working with people and brainstorming ideas. Lawrence believes that great teamwork and communication are the only key to success. Lawrence also wants you to know that he is a supporter of the Free Software Movement. Most of his projects are under GPLv3.`;
+
+export default bioText;

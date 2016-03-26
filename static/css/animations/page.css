@@ -1,35 +1,35 @@
 @import url("animate.min.css");
 
 /* All pages */
-.page-enter {
+.route1-enter {
   animation: slideInRight .5s ease-in;
 }
 
-.page-enter.page-enter-active {
+.route1-enter.route1-enter-active {
   opacity: 1;
 }
 
-.page-leave {
+.route1-leave {
   animation: zoomOut .5s ease-in;
 }
 
-.page-leave.page-leave-active {
+.route1-leave.route1-leave-active {
   opacity: 0;
 }
 
 /* About page */
-.about-enter {
+.route2-enter {
   animation: rotateIn .5s ease-in;
 }
 
-.about-enter.about-enter-active {
+.route2-enter.route2-enter-active {
   opacity: 1;
 }
 
-.about-leave {
+.route2-leave {
   animation: zoomOut .5s ease-in;
 }
 
-.about-leave.about-leave-active {
+.route2-leave.route2-leave-active {
   opacity: 0;
 }

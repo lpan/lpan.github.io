@@ -6,12 +6,13 @@ const animateStyle = {
   width: '100%',
 };
 
-function Boring() {
+function FunFacts() {
   return (
     <div style={animateStyle}>
       <BackArrow />
+      <p>Coming Soon</p>
     </div>
   );
 }
 
-export default Boring;
+export default FunFacts;

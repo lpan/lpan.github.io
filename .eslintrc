@@ -8,7 +8,6 @@
     "es6": true,
    },
    "rules": {
-    "quotes": "off",
     "no-console": "off",
     "new-cap": "off",
     "max-len": "off",
