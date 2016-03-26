@@ -1,14 +1,32 @@
 import React, { PropTypes } from 'react';
+import TechTag from './TechTag';
+
+const contStyle = {
+  border: 'dotted 5px',
+  borderRadius: '257px 15px 225px 15px/15px 225px 15px 255px',
+  textAlign: 'left',
+  padding: '0 1em 1em 1em',
+  marginBottom: '2em',
+};
+
+const linkStyle = {
+  color: 'black',
+  textDecoration: 'none',
+  borderBottom: 'dotted 0.1em black',
+};
 
 function ProjectCard(props) {
   return (
-    <div>
-      <h3>{props.project.name}</h3>
-      <p>{props.project.date}</p>
-      <p>{props.project.text}</p>
-      <p><a href={props.project.link}>Try it out</a></p>
-      <p><a href={props.project.github}>View source</a></p>
-      {props.project.tech.map((tag, i) => <p key={i}>{tag}</p>)}
+    <div className="row center-xs">
+      <div className="row center-xs col-xs-10">
+        <div style={contStyle}>
+          <h2><a style={{ color: 'black' }} href={props.project.link} target="_blank">{props.project.name}</a></h2>
+          <p>{props.project.text}</p>
+          <p><a style={linkStyle} href={props.project.github} target="_blank">View source</a></p>
+          <p>{props.project.date}</p>
+          {props.project.tech.map((tag, i) => <TechTag key={i} name={tag} />)}
+        </div>
+      </div>
     </div>
   );
 }

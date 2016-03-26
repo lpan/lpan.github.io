@@ -1,7 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
-
 .hand-drawn-button {
-  font-family: 'Patrick Hand SC', cursive;
   background: transparent;
   padding: 1em;
   -webkit-transition: all .5s ease;

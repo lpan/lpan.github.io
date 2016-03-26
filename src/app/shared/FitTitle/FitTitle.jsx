@@ -11,9 +11,11 @@ const titleStyle = {
 };
 
 function FitTitle(props) {
+  const newStyle = Object.assign(titleStyle, { fontFamily: props.fontFamily });
+
   return (
     <FitText compressor={props.size}>
-      <p style={titleStyle}>{props.text}</p>
+      <p style={newStyle}>{props.text}</p>
     </FitText>
   );
 }
@@ -21,6 +23,7 @@ function FitTitle(props) {
 FitTitle.propTypes = {
   text: PropTypes.string.isRequired,
   size: PropTypes.number,
+  fontFamily: PropTypes.string,
 };
 
 export default Radium(FitTitle);

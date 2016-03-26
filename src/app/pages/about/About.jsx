@@ -8,6 +8,7 @@ function About() {
       <FitTitle
         text="Want to Know More About Lawrence?"
         size={1.5}
+        fontFamily="Cabin Sketch"
       />
       <div className="row center-xs">
         <div className="row col-md-8 col-xs-10 center-xs around-xs" style={{ marginTop: '2em' }}>

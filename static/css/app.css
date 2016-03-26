@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin+Sketch);
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 @import url("flexboxgrid.min.css");
 @import url("animations/page.css");
 @import url("handButton.css");
@@ -6,7 +7,7 @@
 html, body {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  font-family: "Cabin Sketch";
+  font-family: 'Patrick Hand SC', cursive;
   width: auto !important;
   height: 100%;
   overflow-x: hidden !important;

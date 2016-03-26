@@ -43,7 +43,7 @@ function renderFullPage(html) {
         <meta name="author" content="Lawrence Pan">
         <meta name="theme-color" content="#00000">
         <title>Lawrence Pan</title>
-        <link rel="shortcut icon" href="/img/icon.png" />
+        <link rel="shortcut icon" href="/icons/icon.png" />
         <link rel="stylesheet" href=${cssPath} />
       </head>
       <body>

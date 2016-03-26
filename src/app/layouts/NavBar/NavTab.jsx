@@ -8,11 +8,12 @@ const linkStyle = {
   cursor: 'pointer',
   textDecoration: 'none',
   color: 'black',
+  fontFamily: 'Patrick Hand SC',
 };
 
 const hoverStyle = {
   ':hover': {
-    borderBottom: 'solid 0.2em #4d4d00',
+    borderBottom: 'dotted 0.1em black',
   },
 };
 
@@ -23,7 +24,7 @@ function filter(name) {
 function NavTab(props) {
   return (
     <IndexLink
-      activeStyle={{ borderBottom: 'solid 0.2em #4d4d00' }}
+      activeStyle={{ borderBottom: 'dotted 0.1em black' }}
       style={linkStyle}
       to={`/${filter(props.name)}`}
     >

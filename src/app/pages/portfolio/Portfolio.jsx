@@ -5,7 +5,7 @@ import projects from './projects';
 function Portfolio() {
   return (
     <div>
-      <h1>Portfolio (I am still working on it)</h1>
+      <h1 className="row center-xs">Projects</h1>
       {projects.map((project, i) => <ProjectCard key={i} project={project} />)}
     </div>
   );
