@@ -1,5 +1,6 @@
 @import url("animate.min.css");
 
+/* All pages */
 .page-enter {
   animation: slideInRight .5s ease-in;
 }
@@ -13,5 +14,22 @@
 }
 
 .page-leave.page-leave-active {
+  opacity: 0;
+}
+
+/* About page */
+.about-enter {
+  animation: rotateIn .5s ease-in;
+}
+
+.about-enter.about-enter-active {
+  opacity: 1;
+}
+
+.about-leave {
+  animation: zoomOut .5s ease-in;
+}
+
+.about-leave.about-leave-active {
   opacity: 0;
 }

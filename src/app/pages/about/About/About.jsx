@@ -1,7 +1,6 @@
 import React from 'react';
-import FitTitle from '../../shared/FitTitle/FitTitle';
-import LinkButton from '../../shared/LinkButton/LinkButton';
-import BackArrow from './BackArrow';
+import FitTitle from '../../../shared/FitTitle/FitTitle';
+import LinkButton from '../../../shared/LinkButton/LinkButton';
 
 const animateStyle = {
   position: 'absolute',
@@ -18,8 +17,8 @@ function About() {
       />
       <div className="row center-xs">
         <div className="row col-md-8 col-xs-10 center-xs around-xs" style={{ marginTop: '2em' }}>
-          <LinkButton text="Fun Way" link="/About" />
-          <LinkButton text="Boring Way" link="/About" />
+          <LinkButton text="Fun Way" link="/About/Boring" />
+          <LinkButton text="Boring Way" link="/About/Boring" />
         </div>
       </div>
     </div>
