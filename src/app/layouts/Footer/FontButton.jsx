@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 
 const linkStyle = {
-  marginLeft: '1em',
   color: 'black',
 };
 
 const iconStyle = {
   height: '2em',
   width: '2em',
+  marginTop: '0.5em',
 };
 
 function FontButton(props) {

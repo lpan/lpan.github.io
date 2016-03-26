@@ -20,7 +20,7 @@ const linkStyle = {
 function ProjectCard(props) {
   return (
     <div className="row center-xs">
-      <div className="row center-xs col-xs-10">
+      <div className="row center-xs col-xs-8">
         <div style={contStyle}>
           <h2><a style={{ color: 'black' }} href={props.project.link} target="_blank">{props.project.name}</a></h2>
           <p>{props.project.text}</p>

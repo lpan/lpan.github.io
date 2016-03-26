@@ -5,11 +5,6 @@ import { StyleRoot } from 'radium';
 import NavBar from './layouts/NavBar/NavBar';
 import Footer from './layouts/Footer/Footer';
 
-// footer height
-const spaceStyle = {
-  paddingBottom: '3em',
-};
-
 function App(props) {
   return (
     <StyleRoot>
@@ -24,7 +19,6 @@ function App(props) {
           key: props.location.pathname,
         })}
       </TransitionGroup>
-      <div style={spaceStyle} />
       <Footer />
     </StyleRoot>
   );
