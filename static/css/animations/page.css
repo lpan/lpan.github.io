@@ -11,6 +11,15 @@
 @keyframes scaleUp {
     from    { opacity: 0.3; -webkit-transform: scale(0.8); }
 }
+@-moz-keyframes scaleUp {
+    from    { opacity: 0.3; -moz-transform: scale(0.8); }
+}
+@-webkit-keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+@-ms-keyframes scaleUp {
+    from    { opacity: 0.3; -ms-transform: scale(0.8); }
+}
 
 .page-enter {
   opacity: 0.01;
