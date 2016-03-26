@@ -17,7 +17,7 @@ const projects = [
   {
     name: 'Potential Wheel',
     date: 'March 2016',
-    text: 'A browser controlled robot with funky locomotion built for Robohacks.',
+    text: 'A browser controlled robot with funky locomotion. Built at Robohacks.',
     tech: ['Socket.io', 'ReactJS', 'es6', 'JavaScript', 'Arduino', 'Raspberry Pi'],
     link: 'http://devpost.com/software/potential-wheel',
     github: 'https://github.com/lorix-lpan/potential-wheel',
@@ -47,14 +47,14 @@ const projects = [
   {
     name: 'Food Slayer',
     date: 'February 2016',
-    text: 'A Backendless Angular App that reads a picture of raw ingredients and returns a list of recipes built for ConUHacks',
+    text: 'A Backendless Angular App that reads a picture of raw ingredients and returns a list of recipes. Built at ConUHacks',
     tech: ['AngularJS', 'JSONP', 'es5', 'JavaScript'],
     github: 'https://github.com/lorix-lpan/food-slayr',
   },
   {
     name: 'Canadian Robotics Competition 2016',
     date: 'December 2015 - February 2016',
-    text: 'Website built for Marianopolis Robotics 2016. It also came in first in the Canadian Robotics Competition Web Design Contest',
+    text: 'Website built for Marianopolis Robotics 2016. It came in first in the Canadian Robotics Competition Web Design Contest',
     tech: ['AngularJS', 'jQuery', 'es5', 'Javascript', 'Gulp'],
     link: 'http://robotics.marianopolis.edu',
     github: 'https://github.com/lorix-lpan/marianopolis-robotics-2016',

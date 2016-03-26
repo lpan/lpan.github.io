@@ -4,6 +4,8 @@ import TechTag from './TechTag';
 const contStyle = {
   border: 'dotted 5px',
   borderRadius: '257px 15px 225px 15px/15px 225px 15px 255px',
+  WebkitBorderRadius: '257px 15px 225px 15px/15px 225px 15px 255px',
+  MozBorderRadius: '257px 15px 225px 15px/15px 225px 15px 255px',
   textAlign: 'left',
   padding: '0 1em 1em 1em',
   marginBottom: '2em',
