@@ -12,16 +12,18 @@ const linkStyle = {
 
 const hoverStyle = {
   ':hover': {
-    textDecoration: 'underline',
+    borderBottom: 'solid 0.2em #4d4d00',
   },
 };
 
-const filter = name => name === 'Home' ? '' : name;
+function filter(name) {
+  return name === 'Home' ? '' : name;
+}
 
 function NavTab(props) {
   return (
     <IndexLink
-      activeStyle={{ textDecoration: 'underline' }}
+      activeStyle={{ borderBottom: 'solid 0.2em #4d4d00' }}
       style={linkStyle}
       to={`/${filter(props.name)}`}
     >

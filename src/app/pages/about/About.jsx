@@ -10,7 +10,7 @@ function About() {
         size={1.5}
       />
       <div className="row center-xs">
-        <div className="row col-md-8 center-xs around-xs" style={{ marginTop: '2em' }}>
+        <div className="row col-md-8 col-xs-10 center-xs around-xs" style={{ marginTop: '2em' }}>
           <LinkButton text="Fun Way" link="/About" />
           <LinkButton text="Boring Way" link="/About" />
         </div>
