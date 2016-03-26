@@ -1,6 +1,6 @@
 .hand-drawn-button {
   background: transparent;
-  padding: 1em;
+  padding: 0.5em;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
   letter-spacing: 1px;

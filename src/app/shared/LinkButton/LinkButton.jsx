@@ -9,11 +9,11 @@ const linkStyle = {
 
 function LinkButton(props) {
   return (
-    <div className="hand-drawn-button">
-      <Link style={linkStyle} to={props.link}>
+    <Link style={linkStyle} to={props.link}>
+      <div className="hand-drawn-button">
         {props.text}
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 

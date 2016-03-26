@@ -19,7 +19,7 @@
 
 /* About page */
 .route2-enter {
-  animation: rotateIn .5s ease-in;
+  animation: zoomIn .5s ease-in;
 }
 
 .route2-enter.route2-enter-active {
