@@ -1,29 +1,8 @@
-@keyframes slideInUp {
-    from    { transform:translateY(100%); }
-    to      { transform: translateY(0); }
-}
-
-@keyframes slideInRight {
-    from    { transform:translateX(100%); }
-    to      { transform: translateX(0); }
-}
-
-@keyframes scaleUp {
-    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
-}
-@-moz-keyframes scaleUp {
-    from    { opacity: 0.3; -moz-transform: scale(0.8); }
-}
-@-webkit-keyframes scaleUp {
-    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
-}
-@-ms-keyframes scaleUp {
-    from    { opacity: 0.3; -ms-transform: scale(0.8); }
-}
+@import url("animate.min.css");
 
 .page-enter {
   opacity: 0.01;
-  animation: scaleUp .5s ease-in;
+  animation: bounceInUp .5s ease-in;
 }
 
 .page-enter.page-enter-active {
@@ -32,7 +11,7 @@
 
 .page-leave {
   opacity: 1;
-  transition: opacity 0s ease-in;
+  animation: zoomOut .5s ease-in;
 }
 
 .page-leave.page-leave-active {
