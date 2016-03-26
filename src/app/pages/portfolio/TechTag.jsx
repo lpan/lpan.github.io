@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Radium from 'radium';
 
 const contStyle = {
   borderRadius: '255px 15px 225px 15px/15px 225px 15px 255px',
@@ -7,6 +8,10 @@ const contStyle = {
   cursor: 'pointer',
   marginRight: '0.5em',
   padding: '0 0.3em 0 0.3em',
+  ':hover': {
+    backgroundColor: 'black',
+    color: 'white',
+  },
 };
 
 function TechTag(props) {
@@ -21,4 +26,4 @@ TechTag.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default TechTag;
+export default Radium(TechTag);
