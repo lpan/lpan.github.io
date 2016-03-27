@@ -13,7 +13,7 @@ const iconStyle = {
 function FontButton(props) {
   return (
     <a style={linkStyle} href={props.link} target="_blank">
-      <img style={iconStyle} src={`/icons/${props.name}.png`} />
+      <img style={iconStyle} src={`/icons/social/${props.name}.png`} />
     </a>
   );
 }

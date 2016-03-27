@@ -1,4 +1,6 @@
 import React from 'react';
+import ContactInfo from './ContactInfo/ContactInfo';
+import Summary from './Summary/Summary';
 
 const animateStyle = {
   position: 'absolute',
@@ -8,7 +10,12 @@ const animateStyle = {
 function Resume() {
   return (
     <div style={animateStyle}>
-      <h1>Resume</h1>
+      <div className="row">
+        <div className="col-md-4 col-xs-10" style={{ paddingLeft: '2em' }}>
+          <ContactInfo />
+          <Summary />
+        </div>
+      </div>
     </div>
   );
 }
