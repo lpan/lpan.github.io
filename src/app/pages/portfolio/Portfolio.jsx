@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProjectCard from './ProjectCard';
+import ProjectCard from './ProjectCard/ProjectCard';
 import projects from './projects';
 import DrawnButton from '../../shared/DrawnButton/DrawnButton';
 

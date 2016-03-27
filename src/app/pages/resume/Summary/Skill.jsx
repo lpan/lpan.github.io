@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
-import SkillTag from '../../portfolio/TechTag';
+import DrawnTag from '../../../shared/DrawnTag/DrawnTag';
 
 function Skill(props) {
   return (
     <div>
       <h3>{props.name}</h3>
-      {props.skills.map((skill, i) => <SkillTag key={i} name={skill} />)}
+      {props.skills.map((skill, i) => <DrawnTag key={i} name={skill} />)}
     </div>
   );
 }

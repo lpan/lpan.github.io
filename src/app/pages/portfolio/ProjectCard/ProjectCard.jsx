@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import ReactTooltip from 'react-tooltip';
 
-import TechTag from './TechTag';
+import DrawnTag from '../../../shared/DrawnTag/DrawnTag';
 
 const contStyle = {
   border: 'dotted 5px',
@@ -48,7 +48,7 @@ function ProjectCard(props) {
           <p>{props.project.text}</p>
           <p><a style={linkStyle} href={props.project.github} target="_blank">View source</a></p>
           <p>{props.project.date}</p>
-          {props.project.tech.map((tag, i) => <TechTag key={i} name={tag} />)}
+          {props.project.tech.map((tag, i) => <DrawnTag key={i} name={tag} />)}
         </div>
       </div>
     </div>

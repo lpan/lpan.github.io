@@ -15,7 +15,7 @@ const contStyle = {
   },
 };
 
-function TechTag(props) {
+function DrawnTag(props) {
   return (
     <div style={contStyle}>
       {props.name}
@@ -23,8 +23,8 @@ function TechTag(props) {
   );
 }
 
-TechTag.propTypes = {
+DrawnTag.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-export default Radium(TechTag);
+export default Radium(DrawnTag);
