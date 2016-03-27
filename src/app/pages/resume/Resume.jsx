@@ -6,13 +6,14 @@ import Timeline from './Timeline/Timeline';
 const animateStyle = {
   position: 'absolute',
   width: '100%',
+  paddingBottom: '2em',
 };
 
 function Resume() {
   return (
     <div style={animateStyle}>
-      <div className="row">
-        <div className="col-md-4 col-xs-10" style={{ margin: '0 0 2em 2em' }}>
+      <div className="row between-xs">
+        <div className="col-md-3 col-xs-10" style={{ margin: '0 0 2em 2em' }}>
           <ContactInfo />
           <Skills />
         </div>

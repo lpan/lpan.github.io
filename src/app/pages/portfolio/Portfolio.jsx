@@ -6,6 +6,7 @@ import DrawnButton from '../../shared/DrawnButton/DrawnButton';
 const animateStyle = {
   position: 'absolute',
   width: '100%',
+  paddingBottom: '2em',
 };
 
 const btnStyle = {

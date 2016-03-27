@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import info from './personalInfo.js';
+import info from '../../../../text/personalInfo';
 
 const imgStyle = {
   marginRight: '1em',

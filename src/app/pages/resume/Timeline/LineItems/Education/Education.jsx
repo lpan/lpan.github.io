@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import TextTitle from '../../shared/TextTitle';
+import ImagePill from '../../shared/ImagePill';
 
 function Education(props) {
   return (
@@ -10,26 +11,29 @@ function Education(props) {
         size="1.3em"
         bold
       />
-      <TextTitle
-        margin="no"
-        title={props.school.school}
-        size="1.2em"
-      />
-      <TextTitle
-        margin="no"
-        title={props.school.time}
-        size="1em"
-      />
-      <TextTitle
-        margin="no"
-        title={`Expected Graduation: ${props.school.expected}`}
-        size="1em"
-      />
-      <TextTitle
-        margin="no"
-        title={props.school.location}
-        size="1em"
-      />
+      <div style={{ marginLeft: '1em' }}>
+        <ImagePill name="school">
+          <TextTitle
+            margin="no"
+            title={props.school.school}
+            size="1.2em"
+          />
+        </ImagePill>
+        <ImagePill name="time">
+          <TextTitle
+            margin="no"
+            title={props.school.time}
+            size="1em"
+          />
+        </ImagePill>
+        <ImagePill name="graduate">
+          <TextTitle
+            margin="no"
+            title={`Expected Graduation: ${props.school.expected}`}
+            size="1em"
+          />
+        </ImagePill>
+      </div>
     </div>
   );
 }

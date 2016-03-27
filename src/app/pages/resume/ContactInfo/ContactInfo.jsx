@@ -4,7 +4,7 @@ import ContactPill from './ContactPill';
 function ContactInfo() {
   return (
     <div>
-      <h2>Lawrence Pan</h2>
+      <h1>Lawrence Pan</h1>
       <ContactPill name="phone" />
       <ContactPill name="location" />
       <ContactPill name="school" />
