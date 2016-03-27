@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactInfo from './ContactInfo/ContactInfo';
-import Summary from './Summary/Summary';
+import Skills from './Skills/Skills';
+import Timeline from './Timeline/Timeline';
 
 const animateStyle = {
   position: 'absolute',
@@ -11,9 +12,12 @@ function Resume() {
   return (
     <div style={animateStyle}>
       <div className="row">
-        <div className="col-md-4 col-xs-10" style={{ paddingLeft: '2em' }}>
+        <div className="col-md-4 col-xs-10" style={{ margin: '0 0 2em 2em' }}>
           <ContactInfo />
-          <Summary />
+          <Skills />
+        </div>
+        <div className="col-md-offset-1 col-md-7 col-xs-10" style={{ margin: '0 0 2em 2em' }}>
+          <Timeline />
         </div>
       </div>
     </div>

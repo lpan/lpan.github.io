@@ -90,7 +90,6 @@ const projects = [
     text: 'A Desktop Configuration Manager that keeps my configuration files in sync across multiple devices',
     tech: ['Bash'],
     github: 'https://github.com/lorix-lpan/ccc_helper',
-    active: true,
   },
   {
     name: 'CCC-Helper',

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import DrawnTag from '../../../shared/DrawnTag/DrawnTag';
 
-function Skill(props) {
+function SkillList(props) {
   return (
     <div>
       <h3>{props.name}</h3>
@@ -10,9 +10,9 @@ function Skill(props) {
   );
 }
 
-Skill.propTypes = {
+SkillList.propTypes = {
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
   name: PropTypes.string.isRequired,
 };
 
-export default Skill;
+export default SkillList;
