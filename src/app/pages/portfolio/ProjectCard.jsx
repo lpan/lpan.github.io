@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import ReactTooltip from 'react-tooltip';
+
 import TechTag from './TechTag';
 
 const contStyle = {
@@ -17,12 +19,32 @@ const linkStyle = {
   borderBottom: 'dotted 0.1em black',
 };
 
+const imgStyle = {
+  height: '1em',
+  width: '1em',
+  margin: '0.5em 0 0 0.5em',
+  cursor: 'pointer',
+};
+
 function ProjectCard(props) {
   return (
     <div className="row center-xs">
       <div className="row center-xs col-xs-8">
         <div style={contStyle}>
-          <h2><a style={{ color: 'black' }} href={props.project.link} target="_blank">{props.project.name}</a></h2>
+          <div className="row middle-xs">
+            <h2><a style={{ color: 'black' }} href={props.project.link} target="_blank">{props.project.name}</a></h2>
+            {(() => {
+              if (props.project.active) {
+                return (
+                  <div>
+                    <img data-tip="This project is active" style={imgStyle} src={'/icons/active.png'} />
+                    <ReactTooltip place="right" type="light" effect="solid" />
+                  </div>
+                );
+              }
+              return '';
+            })()}
+          </div>
           <p>{props.project.text}</p>
           <p><a style={linkStyle} href={props.project.github} target="_blank">View source</a></p>
           <p>{props.project.date}</p>
@@ -41,6 +63,7 @@ ProjectCard.propTypes = {
     tech: PropTypes.arrayOf(PropTypes.string).isRequired,
     link: PropTypes.string,
     github: PropTypes.string,
+    active: PropTypes.bool,
   }).isRequired,
 };
 

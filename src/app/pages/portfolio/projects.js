@@ -6,13 +6,7 @@ const projects = [
     tech: ['ExpressJS', 'ReactJS', 'es6', 'JavaScript'],
     link: 'http://lawry.io',
     github: 'https://github.com/lorix-lpan/im-lawrence',
-  },
-  {
-    name: 'Find a Classroom',
-    date: 'March 2016 - Now',
-    text: 'A smart Web App that tells you which classrooms are free at a given moment.',
-    tech: ['ExpressJS', 'MongoDB', 'ReactJS', 'es6', 'JavaScript'],
-    github: 'https://github.com/lorix-lpan/find-a-classroom',
+    active: true,
   },
   {
     name: 'Potential Wheel',
@@ -21,6 +15,14 @@ const projects = [
     tech: ['Socket.io', 'ReactJS', 'es6', 'JavaScript', 'Arduino', 'Raspberry Pi'],
     link: 'http://devpost.com/software/potential-wheel',
     github: 'https://github.com/lorix-lpan/potential-wheel',
+  },
+  {
+    name: 'Find a Classroom',
+    date: 'March 2016 - Now',
+    text: 'A smart Web App that tells you which classrooms are free at a given moment.',
+    tech: ['ExpressJS', 'MongoDB', 'ReactJS', 'es6', 'JavaScript'],
+    github: 'https://github.com/lorix-lpan/find-a-classroom',
+    active: true,
   },
   {
     name: 'Talky Johnny',
@@ -36,6 +38,7 @@ const projects = [
     tech: ['ReactJS', 'Redux', 'ExpressJS', 'MongoDB', 'es6', 'JavaScript'],
     link: 'http://schedule-perfect.me',
     github: 'https://github.com/lorix-lpan/perfect-schedule',
+    active: true,
   },
   {
     name: 'Marianopolis Course Offering PDF Converter',
@@ -87,6 +90,7 @@ const projects = [
     text: 'A Desktop Configuration Manager that keeps my configuration files in sync across multiple devices',
     tech: ['Bash'],
     github: 'https://github.com/lorix-lpan/ccc_helper',
+    active: true,
   },
   {
     name: 'CCC-Helper',

@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
+import DrawnButton from '../DrawnButton/DrawnButton';
+
 const linkStyle = {
   textDecoration: 'none',
   color: 'black',
@@ -10,9 +12,7 @@ const linkStyle = {
 function LinkButton(props) {
   return (
     <Link style={linkStyle} to={props.link}>
-      <div className="hand-drawn-button">
-        {props.text}
-      </div>
+      <DrawnButton text={props.text} />
     </Link>
   );
 }

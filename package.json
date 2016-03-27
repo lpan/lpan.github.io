@@ -35,7 +35,8 @@
     "react-addons-css-transition-group": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-fittext": "^0.1.1",
-    "react-router": "^2.0.0-rc5"
+    "react-router": "^2.0.0-rc5",
+    "react-tooltip": "^1.1.4"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",
