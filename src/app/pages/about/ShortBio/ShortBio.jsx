@@ -1,7 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 
-import boringText from './bioText.js';
+import bio from '../../../../text/bioText';
 import BackArrow from '../shared/BackArrow';
 
 const animateStyle = {
@@ -26,7 +26,7 @@ function ShortBio() {
     <div style={animateStyle}>
       <BackArrow />
       <div className="row center-xs" style={paraStyle}>
-        <p className="col-md-6 col-xs-8">{boringText}</p>
+        <p className="col-md-6 col-xs-8">{bio}</p>
       </div>
     </div>
   );

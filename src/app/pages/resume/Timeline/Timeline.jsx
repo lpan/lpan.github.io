@@ -1,6 +1,6 @@
 import React from 'react';
 import LineItem from './LineItems/LineItem';
-import resume from './resume';
+import resume from '../../../../text/resume';
 
 function Timeline() {
   return (

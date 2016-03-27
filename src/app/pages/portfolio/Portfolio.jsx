@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProjectCard from './ProjectCard/ProjectCard';
-import projects from './projects';
+import projects from '../../../text/projects';
 import DrawnButton from '../../shared/DrawnButton/DrawnButton';
 
 const animateStyle = {
