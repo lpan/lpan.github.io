@@ -15,9 +15,8 @@ const timeline = {
       time: 'May 2015 - Now',
       location: 'Montreal, Canada',
       roles: [
-        'Preside over meetings',
-        'Make telephone sales',
         'Deploy Wordpress sites on Linux VPSs with Nginx and MySQL',
+        'Make telephone sales',
       ],
     },
     {
