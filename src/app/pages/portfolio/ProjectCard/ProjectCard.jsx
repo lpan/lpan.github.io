@@ -32,7 +32,23 @@ function ProjectCard(props) {
       <div className="row center-xs col-xs-8">
         <div style={contStyle}>
           <div className="row middle-xs">
-            <h2><a style={{ color: 'black' }} href={props.project.link} target="_blank">{props.project.name}</a></h2>
+            {(() => {
+              if (props.project.link) {
+                return (
+                  <h2>
+                    <a style={{ color: 'black' }} href={props.project.link} target="_blank">
+                      {props.project.name}
+                    </a>
+                  </h2>
+                );
+              } else {
+                return (
+                  <h2>
+                    {props.project.name}
+                  </h2>
+                );
+              }
+            })()}
             {(() => {
               if (props.project.active) {
                 return (
