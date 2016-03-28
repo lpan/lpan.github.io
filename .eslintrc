@@ -8,8 +8,8 @@
     "es6": true,
    },
    "rules": {
-    "no-console": "off",
-    "new-cap": "off",
-    "max-len": "off",
+    "no-console": 2,
+    "new-cap": [2, {"capIsNewExceptions": ["Radium"]}],
+    "max-len": [2, 120, 4, {"ignoreUrls": true}],
    }
 }
