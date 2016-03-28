@@ -44,22 +44,22 @@ const timeline = {
     {
       contest: 'McGill RoboHacks',
       awards: 'Best CEGEP Team & Most Imaginative Robot',
-      time: '2016',
-    },
-    {
-      contest: 'Canadian Open Mathematics Challenge',
-      awards: 'Fourth Place in the Province of Quebec, scored 58/80',
-      time: '2016',
+      time: 'March, 2016',
     },
     {
       contest: 'Canadian Robotics Competition',
       awards: 'First Place website & Fourth Place Overall',
-      time: '2016',
+      time: 'February, 2016',
+    },
+    {
+      contest: 'Canadian Open Mathematics Challenge',
+      awards: 'Fourth Place in the Province of Quebec, scored 58/80',
+      time: 'January, 2016',
     },
     {
       contest: 'Euclid Contest',
       awards: 'School Champion, scored 61/100',
-      time: '2015',
+      time: 'May, 2015',
     },
   ],
 };
