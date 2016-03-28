@@ -24,4 +24,5 @@ export const experienced = [
   'ExpressJS',
   'Webpack',
   'Gulp',
+  'Wordpress',
 ];
