@@ -1,5 +1,13 @@
 const timeline = {
-  summary: ['Hello'],
+  summary: [
+    [
+      'Fast learner, pick up a new language/framework in hours.',
+      'Strong in mathematics, excellent problem solver.',
+      'Familiar with the command line and the Linux operation system.',
+      'Excellent oral, written and interpersonal communication skill.',
+      'Good team player.',
+    ],
+  ],
   experience: [
     {
       company: 'OmniPhy co.',
