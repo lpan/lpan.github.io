@@ -2,10 +2,14 @@
   "extends": "airbnb",
   "parser": "babel-eslint",
   "env": {
+    "browser": true,
     "node": true,
+    "mocha": true,
    },
    "ecmaFeatures": {
+    "jsx": true,
     "es6": true,
+    "classes": true,
    },
    "rules": {
     "no-console": 2,
