@@ -5,7 +5,7 @@ export const expert = [
   'Python3',
   'Bash',
   'ReactJS',
-  'Redux'
+  'Redux',
   'AngularJS',
   'MVC',
   'Flux',
