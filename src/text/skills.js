@@ -15,6 +15,7 @@ export const experienced = [
   'Ruby',
   'C',
   'C++',
+  'PHP',
   'Ruby on Rails',
   'Sinatra',
   'Flask',
