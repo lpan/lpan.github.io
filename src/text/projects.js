@@ -21,6 +21,7 @@ const projects = [
     date: 'March 2016 - Now',
     text: 'A smart Web App that tells you which classrooms are free at a given moment.',
     tech: ['ExpressJS', 'MongoDB', 'ReactJS', 'es6', 'JavaScript'],
+    link: 'http://findroom.lawry.io',
     github: 'https://github.com/lorix-lpan/find-a-classroom',
     active: true,
   },
