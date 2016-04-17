@@ -28,10 +28,8 @@ class Portfolio extends Component {
   }
 
   _toggleActive() {
-    console.log(this.state);
     if (this.state.showAll) {
       this.setState({ projects: this.state.projects.filter(pro => pro.active ? pro : null), showAll: false });
-      console.log('lol');
     } else {
       this.setState({ projects, showAll: true });
     }
