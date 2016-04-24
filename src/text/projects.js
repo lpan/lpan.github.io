@@ -1,5 +1,14 @@
 const projects = [
   {
+    name: 'Bob the R Score God. aka. Bob the Chat Bot',
+    date: 'April 2016 - Now',
+    text: 'Bob is an inspirational Facebook Messenger Chat Bot. Currently under close Beta',
+    tech: ['ExpressJS', 'ReactJS', 'es6', 'Messenger API'],
+    link: 'https://www.facebook.com/rscoregod/',
+    github: 'https://github.com/lorix-lpan/r-score-god',
+    active: true,
+  },
+  {
     name: 'I am Lawrence',
     date: 'March 2016 - Now',
     text: 'My Portfolio and Resume',
