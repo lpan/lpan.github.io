@@ -1,6 +1,6 @@
 const projects = [
   {
-    name: 'Bob the R Score God. aka. Bob the Chat Bot',
+    name: 'Bob the R Score God',
     date: 'April 2016 - Now',
     text: 'Bob is an inspirational Facebook Messenger Chat Bot. Currently under close Beta',
     tech: ['ExpressJS', 'ReactJS', 'es6', 'Messenger API'],
