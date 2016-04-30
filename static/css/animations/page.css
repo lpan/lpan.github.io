@@ -10,7 +10,7 @@
 }
 
 .route1-leave {
-  animation: zoomOut .5s ease-in;
+  animation: fadeOutLeft .5s ease-in;
 }
 
 .route1-leave.route1-leave-active {
