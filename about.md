@@ -21,8 +21,8 @@ developing in a multi-paradigm language, especially JavaScript.
 
 I am also a [Free Software](http://www.fsf.org/) activist. I donate annually to
 the Free Software Foundation as a student associative member and run GNU/Linux
-exclusively on my laptop. I am currently on [Fedora](https://getfedora.org/) with
-Gnome 3.
+exclusively on my laptop. I am currently on {{ site.operation_system }} with
+the {{ site.desktop_environment }} desktop environment.
 
 For development, I use Neovim and Tmux. You can check out my
 [dotfiles](https://github.com/lpan/dotfiles) for more details.

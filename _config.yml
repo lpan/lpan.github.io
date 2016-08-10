@@ -6,7 +6,11 @@ description: >
 baseurl: ""
 url: "http://lpan.github.io"
 twitter_username: l_pan_
-github_username:  lpan
+github_username: lpan
 
 # Build settings
 markdown: kramdown
+
+# personal config
+operation_system: "Fedora"
+desktop_environment: "Gnome 3"
