@@ -6,6 +6,10 @@
 
   $header-spacing: $spacing-unit * 2;
   margin-top: $header-spacing;
+
+  @include media-query($on-palm) {
+    margin-top: $spacing-unit;
+  }
 }
 
 .header-main {
