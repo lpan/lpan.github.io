@@ -1,5 +1,28 @@
 <header class="header-wrapper">
+
   {% if page.url != "/" %}
-    <p>Back</p>
+    <a href="/">&#8617; back</a>
   {% endif %}
+
+  {% if page.url == "/" %}
+    <div>
+      <h1 class="header-main">Lawrence Pan</h1>
+      <ul class="header-nav-list">
+        <li><a href="">about</a></li>
+        <li>
+          <a href="https://github.com/{{ site.github_username }}"
+             target="_blank">
+            github
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/{{ site.twitter_username }}"
+             target="_blank">
+            twitter
+          </a>
+        </li>
+      </ul>
+    </div>
+  {% endif %}
+
 </header>
