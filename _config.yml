@@ -1,10 +1,9 @@
 # Site settings
 title: Lawrence Pan
 email: lawrencefeipan@gmail.com
-description: >
-  Lawrence Pan's blog
+description: "Lawrence Pan's profile and blog"
 baseurl: ""
-url: "http://lpan.github.io"
+url: "http://lpan.io"
 twitter_username: l_pan_
 github_username: lpan
 
