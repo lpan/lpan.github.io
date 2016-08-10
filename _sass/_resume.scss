@@ -1,0 +1,24 @@
+.resume-exp-wrapper {
+  margin-left: $spacing-unit;
+  line-height: $small-line-height;
+
+  p:nth-child(1) {
+    color: $grey-color;
+    font-size: $small-font-size;
+    font-style: italic;
+  }
+
+  p:nth-child(2) {
+    font-weight: $semi-bold-font-weight;
+  }
+
+  p:nth-child(3), p:nth-child(4) {
+    font-style: italic;
+    font-size: $small-font-size;
+  }
+
+  ul {
+    line-height: $base-line-height;
+    list-style-type: square;
+  }
+}

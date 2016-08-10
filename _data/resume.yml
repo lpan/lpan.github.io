@@ -1,0 +1,11 @@
+experiences:
+  - name: "Plotly Inc."
+    position: "Frontend Engineer Intern"
+    location: "Montréal, Canada"
+    duration:
+      - "May 2016"
+      - "August 2016"
+    summaries:
+      - "Modularized existing feature tiering framework to make it more scalable."
+      - "Designed functional algorithms with RamdaJS."
+      - "Built performant UI with React.js."

@@ -1,4 +1,14 @@
 <footer class="footer-wrapper">
+
+  {% if page.url == "/resume/" %}
+    <p class="resume-footer">
+      To request my full résumé, email me at
+      <a href="mailto:lawrencefeipan@gmail.com" target="_top">
+        lawrencefeipan@gmail.com
+      </a>
+    </p>
+  {% endif %}
+
   <ul>
     <li>
       {% include icon-github.html username=site.github_username %}
@@ -7,4 +17,5 @@
       {% include icon-twitter.html username=site.twitter_username %}
     </li>
   </ul>
+
 </footer>
