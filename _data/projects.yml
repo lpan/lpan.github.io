@@ -1,0 +1,22 @@
+- name: "rebash"
+  description: "Bash interface for your website. Built with React"
+  link: "https://github.com/lpan/rebash"
+  tags:
+    - "JavaScript"
+    - "es6"
+    - "React"
+    - "Functional programming"
+
+- name: "loobot"
+  description: "Chatbot interface for UWaterloo Open Data API with Natural Language Processing"
+  link: "https://github.com/lpan/loobot"
+  tags:
+    - "JavaScript"
+    - "node.js"
+    - "NLP"
+
+- name: "dotfiles manager"
+  description: "Configurable dotfiles manager"
+  link: "https://github.com/lpan/dotfiles"
+  tags:
+    - "python"

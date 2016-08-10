@@ -3,3 +3,29 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
+
+<div class="projects">
+
+  {% for project in site.data.projects %}
+
+    <div class="project-wrapper">
+
+      <h1><a href="{{ project.link }}" target="_blank">{{ project.name }}</a></h1>
+      
+      <div class="project-content">
+
+        <p>{{ project.description }}</p>
+        
+        {% for tag in project.tags %}
+        
+          <span>{{ tag }}</span>
+        
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  {% endfor %}
+
+</div>

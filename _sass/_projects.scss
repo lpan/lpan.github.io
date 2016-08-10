@@ -1,0 +1,16 @@
+.projects {
+  margin-left: $spacing-unit;
+}
+
+.project-wrapper {
+  .project-content {
+    margin-left: $spacing-unit;
+    margin-bottom: $spacing-unit;
+
+    span {
+      padding: 3px;
+      border: medium solid black;
+      border-radius: 5px;
+    }
+  }
+}
