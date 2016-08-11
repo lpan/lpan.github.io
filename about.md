@@ -5,10 +5,10 @@ permalink: /about/
 ---
 
 Hi there, my name is Lawrence Pan and I am a Software Engineering student at the
-University of Waterloo, class of 2021.
+University of Waterloo, Class of 2021.
 
 I love coding from the very bottom of my heart and always look forward to
-learning new technologies. I like to write simple, clean and maintainable code.
+learning new technologies. I like to write simple, clean, and maintainable, code.
 
 I am also a [Free Software](http://www.fsf.org/) activist. I donate annually to
 the Free Software Foundation as a student associative member and run GNU/Linux
