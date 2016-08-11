@@ -91,6 +91,10 @@
 
     .post-link {
       display: inline-block;
+
+      @include media-query($on-palm) {
+        margin-left: $spacing-unit / 2;
+      }
     }
   }
 }
