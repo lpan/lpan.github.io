@@ -10,6 +10,8 @@ github_username: lpan
 # Build settings
 markdown: kramdown
 
+permalink: /:categories/:title/
+
 # personal config
 operation_system: "Fedora"
 desktop_environment: "Gnome 3"
