@@ -10,7 +10,7 @@ github_username: lpan
 # Build settings
 markdown: kramdown
 
-permalink: /:categories/:title/
+permalink: /:title/
 
 # personal config
 operation_system: "Fedora"
