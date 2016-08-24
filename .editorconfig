@@ -1,0 +1,28 @@
+;.editorconfig
+
+root = true
+
+[**.js]
+indent_style = space
+indent_size = 2
+max_char = 80
+
+[**.md]
+indent_style = space
+indent_size = 2
+max_char = 80
+
+[**.json]
+indent_style = space
+indent_size = 2
+
+[**.scss]
+indent_style = space
+indent_size = 2
+max_char = 80
+
+[**.html]
+indent_style = space
+indent_size = 2
+max_char = 80
+brace_style = expand
