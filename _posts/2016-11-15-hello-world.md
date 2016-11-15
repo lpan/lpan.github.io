@@ -5,8 +5,6 @@ date:   2016-11-15
 categories: misc
 ---
 
-# Hello World!
-
 I created this site back in August with the purpose of improving my writing
 skills, showcasing my technical knowledge and sharing my opinion on some issues
 in life. However, writing stuff is not as easy as it seems. Especially for
@@ -15,7 +13,7 @@ published this site, here comes my first blog article. Big procrastinator
 confirmed. But anyway, you have to start from somewhere right?
 
 For the remaining part of this article, I want to briefly discuss one of the
-major reasons I started this blog and picked up my reading habit.
+major reasons that I started this blog and picked up my reading habit.
 
 I wouldn't criticize the Canadian education system but it is true that Canadian
 engineering students do not take enough complementary studies electives. Our
