@@ -1,5 +1,4 @@
-# im-lawrence
-My profile and resume
+# My profile and resume
 
 ## Versions
 
