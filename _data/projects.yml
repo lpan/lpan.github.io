@@ -1,9 +1,17 @@
+- name: "Plan me"
+  description: "MHacks 8 Intelligent Calendar"
+  link: "https://github.com/DavidSGK/plan-me"
+  tags:
+    - "JavaScript"
+    - "React"
+    - "Redux"
+    - "Firebase"
+
 - name: "rebash"
   description: "Bash interface for your website. Built with React"
   link: "https://github.com/lpan/rebash"
   tags:
     - "JavaScript"
-    - "es6"
     - "React"
     - "Functional programming"
 
@@ -20,3 +28,4 @@
   link: "https://github.com/lpan/dotfiles"
   tags:
     - "Python"
+    - "Bash"
