@@ -89,6 +89,13 @@
       font-size: $small-font-size;
     }
 
+    .post-break {
+      display: none;
+      @include media-query($on-palm) {
+        display: inline;
+      }
+    }
+
     .post-link {
       display: inline-block;
 
