@@ -6,8 +6,8 @@ categories: programming
 ---
 
 You know how to `git add`, `git commit`, `git push` and `git pull`; You go to a
-fuck ton of hackathons; You love experimenting new technologies and building
-cool shits in 36 hours. All is good, you are awesome.
+ton of hackathons; You love experimenting new technologies and building cool
+shits in 36 hours. All is good, you are awesome.
 
 You also love working with people. You know the importance of version control so
 you ask all your teammates to use git and github. You love git, your teammates
