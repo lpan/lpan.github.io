@@ -208,11 +208,11 @@ I say this is a *naive* example since we introduced a *circular require* here).
 Then we are able to make our second request with the payload from the first one!
 Similarly, our function is paused until the second request is done.
 
-Although, generators are even more obfuscated than the other two, one huge
-advantage of using it over Promise and callbacks is that, async code written
-with generators looks like **synchronous code**.
+Although, generators are even more obfuscated than Promise, one huge advantage
+of using it over Promise is that, async code written with generators looks like
+**synchronous code**.
 
-That's why people proposed `async` and `await` to be added in `ES7`!
+And that's why people proposed `async` and `await` to be added in `ES7`.
 
 
 #### **async & await**
@@ -220,15 +220,15 @@ That's why people proposed `async` and `await` to be added in `ES7`!
 The purpose of this article is to give you a high level overview of asynchronous
 programming in JavaScript. Thus, I won't go too much in depth. However, *async &
 await* are so interesting that I want to write a blog article dedicated to them
-alone.
+alone!
 
-*async & await* have the simplicity of `Promise` and the synchronous look of
-`generators`. Currently, *async and await* are still an experimental feature.
-You can enable them by passing a harmony flag `--harmony-async-await`.
+*async & await* have the simplicity of `Promises` and the synchronous look of
+`generators`. Currently, *async & await* is still an experimental feature.  You
+need to enable them by passing a harmony flag `--harmony-async-await`.
 
 eg. `node --harmony-async-await app.js`
 
-Our Callback hell alternative implementation with async & await will be like
+Our Callback hell alternative implementation with async & await will look like
 this:
 
 ```javascript
