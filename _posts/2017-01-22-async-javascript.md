@@ -19,20 +19,19 @@ tasks, we need to execute them in a different thread (make them asynchronous).
 
 **Q: Why is it a pain in the butt?**
 
-A: When your program contains asynchronous code, it becomes vulnerable to problems
-such as race conditions(accessing same variable from different threads),
-unreadable code, etc.
+A: When your program contains asynchronous code, it becomes vulnerable to
+problems such as race conditions(accessing the same variable from different
+threads), unreadable code, etc.
 
-One more thing I want to address before we start: asynchronous programming can
-be more tedious without JavaScript's **single-threaded** event loop design. We
-should thank Brendan Eich for that.
+One more thing I want to address before we start is that asynchronous
+programming can be more tedious without JavaScript's **single-threaded** event
+loop design. We should thank Brendan Eich for that.
 
 # **Solutions**
 
 #### **Callbacks**
 
-We first invented callbacks to handle async tasks. They are pretty sweet
-until...
+Passing callbacks to asynchronous functions is pretty straightforward until...
 
 ```javascript
 // for simplicity sake, this piece of code is not bulletproof
@@ -59,7 +58,7 @@ request(myFirstURL, function (err, data) {
 ```
 
 Callbacks are simple and intuitive. However, the async code you write with
-callbacks are not. Especially when you are executing a sequence of asynchronous
+callbacks is not. Especially when you are executing a sequence of asynchronous
 tasks such that **the next one depends on the result of the previous one** (as
 shown above), you get a `callback hell`. Go to
 [http://callbackhell.com/](http://callbackhell.com/) for more info ;).
@@ -115,9 +114,10 @@ about generators
 In short, generators are functions that can be *paused* and *resumed*. When a
 generator function is called, instead of executing the body of the function, it
 returns a `generator object`. If you come from a functional programming
-background, you may find that `generator` provide an excellent API to implement
+background, you may find that `generator` provides an excellent API to implement
 `lazy evaluation`! In fact, we also can take advantage of its pause-and-play
-nature to perform async operations. It may not be as intuitive at first.
+nature to perform async operations. However, it may not be as intuitive at
+first.
 
 There are many different approaches to implement async with generators. Here is
 a naive one:
@@ -176,7 +176,7 @@ function* myGen() {
 }
 
 const gen = myGen();
-console.log(gen.next().value); // wlil print 'hello!' to stdin.
+console.log(gen.next().value); // will print 'hello!' to stdin.
 ```
 
 * Calling `.next(undefined)` on `yield **undefined**` does **not** resume the
@@ -187,13 +187,13 @@ eg.
 ```javascript
 function genA() {
   yield undefined;
-  console.log('I will never be evaluated :(!');
+  console.log('I will never be evaluated :(');
 }
 
 const a = genA();
-a.next(); // {value: undefined, done: false}
-a.next(); // {value: undefined, done: false}
-a.next(); // {value: undefined, done: false}
+a.next(undefined); // {value: undefined, done: false}
+a.next(undefined); // {value: undefined, done: false}
+a.next(undefined); // {value: undefined, done: false}
 // ...
 ```
 
@@ -224,11 +224,11 @@ alone!
 
 *async & await* have the simplicity of `Promises` and the synchronous look of
 `generators`. Currently, *async & await* is still an experimental feature.  You
-need to enable them by passing a harmony flag `--harmony-async-await`.
+need to enable them by passing a harmony flag `--harmony-async-await` to node.
 
 eg. `node --harmony-async-await app.js`
 
-Our Callback hell alternative implementation with async & await will look like
+Our Callback hell alternative implementation with *async* & await will look like
 this:
 
 ```javascript
@@ -267,9 +267,18 @@ async function main() {
 That's it! Our code is intuitive, synchronous-looking and boilerplateless! One
 interesting observation is that you still need to use `Promise` as we *await* on
 them. In other words, *async & await* in JavaScript is built on top of Promises.
-I am not a Pythonista but I learnt that *async & await* also exist in Python and
-their purpose is to simplify the API of the *asyncio* library. Fascinatingly, in
-Python, *asyncio* is built on top of generators!  In my next article, I will be
-comparing and contrasting *async & await* in JavaScript and Python.
+This leads to an even more interesting observation. I am not a Pythonista but I
+learnt that *async & await* also exist in Python and their purpose is to
+simplify the API of the *asyncio* library. In Python, *asyncio* is built on top
+of generators! So how *async & await* in Python different from the ones in
+JavaScript? In my next article, I will be comparing and contrasting *async &
+await* in the two languages.
+
+There are also many other cool ways of writing async code in JavaScript. One of
+the most well-known ones that I have not covered is *Observables* from
+*ReactiveX*. They are similar to `Promises` but much much more powerful. You
+definitely should [read up on
+it](http://reactivex.io/rxjs/manual/overview.html#introduction) if you are
+interested!
 
 Thanks for reading :)
