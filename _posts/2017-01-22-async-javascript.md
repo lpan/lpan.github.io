@@ -153,7 +153,7 @@ There are a couple of things you should know to understand what is happening:
 * Generator functions pause at the statements that contain `yield`;
 * When you call `gen.next()`, the generator object will evaluate the current
   `yield` statement and returns the *yielded* value. It will continue evaluating
-  until the next `yield` statement.
+  until it encounters the next `yield` statement.
 * **we can pass information in and out of the generator** using *next()*.
 
 For example,
@@ -179,7 +179,7 @@ const gen = myGen();
 console.log(gen.next().value); // will print 'hello!' to stdin.
 ```
 
-* Calling `.next(undefined)` on `yield **undefined**` does **not** resume the
+* Calling `.next(undefined)` on `yield undefined` does **not** resume the
   generator function!
 
 eg.
