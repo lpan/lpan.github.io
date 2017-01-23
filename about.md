@@ -18,5 +18,5 @@ the {{ site.desktop_environment }} desktop environment.
 For development, I use Neovim and Tmux. You can check out my
 [dotfiles](https://github.com/lpan/dotfiles) for more details.
 
-In my spare time, I read, write blog articles, lift weights or play sports. I
-rowed competitively and played intercity soccer when I was in high school.
+In my spare time, I read, write blog articles, lift weights or play sports. I am
+currently an active member of the University of Waterloo Dragon Boat Club.
