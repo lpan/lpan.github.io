@@ -2,6 +2,7 @@
 layout: post
 title:  "Hello World"
 date:   2016-11-15
+comments: true
 categories: misc
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title:  "Git for Hackathon Hackers"
 date:   2016-11-22
+comments: true
 categories: programming
 ---
 

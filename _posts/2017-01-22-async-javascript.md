@@ -1,8 +1,8 @@
 ---
 layout: post
-comments: true
 title:  "Asynchronous JavaScript"
 date:   2017-01-22
+comments: true
 categories: programming
 ---
 
