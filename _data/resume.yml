@@ -1,4 +1,13 @@
 experiences:
+  - name: "Universe (acquired by Ticketmaster)"
+    position: "Fullstack Engineer Intern"
+    location: "Toronto, Canada"
+    duration:
+      - "April 2017"
+      - "August 2017"
+    summaries:
+      - "Designed an infrastructure that coordinates Universe's IFrame widgets from scratch"
+
   - name: "Plotly Inc."
     position: "Front End Engineer Intern"
     location: "Montréal, Canada"
@@ -6,6 +15,6 @@ experiences:
       - "May 2016"
       - "August 2016"
     summaries:
-      - "Designed an API that abstracted feature tiering to allow for easier implementation."
-      - "Implemented front end user interface interacting with a REST API using React, Flux, Redux and tested them with Jest and Python Selenium."
-      - "Involved with codebase refactoring and worked on Flux to Redux migration."
+      - "Significantly contributed to the plot editor app written in React and Redux."
+      - "Worked with Backend developers to implement front end authorization"
+      - "TDD with Jest and Selenium"
