@@ -23,7 +23,7 @@ You want your users to have a good experience so you decided to build (or
 migrate to) a SPA instead of rendering HTML pages on the server. As a trade off,
 you now have to deal with data fetching and caching (inb4 graphql), bundle size
 optimization (code splitting), SEO optimization, state management and more.
-Since many other peeps are scratching their head the same way as you do, many
+Since many other peeps are scratching their head the same way as you are, many
 good, benevolent and not creepy people on the Internet developed cool libraries
 to make everyone's life easier. As someone who is sane, you (and many
 others) started to use those libraries in your code base.
@@ -52,12 +52,8 @@ scalable and testable in my dream.
 
 #### Redux
 
-* Prefer primitives over objects
-  * Instead of a list of TODO objects, have a list of TODO IDs
-  * store TODO objects in a store that is not mapped to any component props
-  * Use selector to lookup TODO objects by ID.
-* No Immutable.js (see above, it only adds complexity IMHO)
-* No nested reducers
+* Redux is a state management lib not a rest api cache management lib!
+* Avoid nested reducers.
 * Maximize the use of selectors
 
 #### Reselect
