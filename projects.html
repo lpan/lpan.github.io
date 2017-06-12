@@ -11,15 +11,15 @@ permalink: /projects/
     <div class="project-wrapper">
 
       <h1><a href="{{ project.link }}" target="_blank">{{ project.name }}</a></h1>
-      
+
       <div class="project-content">
 
         <p>{{ project.description }}</p>
-        
+
         {% for tag in project.tags %}
-        
+
           <span>{{ tag }}</span>
-        
+
         {% endfor %}
 
       </div>
