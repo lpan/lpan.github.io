@@ -1,11 +1,9 @@
-- name: "Plan me"
-  description: "MHacks 8 Intelligent Calendar"
-  link: "https://github.com/DavidSGK/plan-me"
+- name: "VI Worsened"
+  description: "VI like text editor built with C and Ncurses"
+  link: "https://github.com/lpan/viw"
   tags:
-    - "JavaScript"
-    - "React"
-    - "Redux"
-    - "Firebase"
+    - "C"
+    - "MVC"
 
 - name: "rebash"
   description: "Bash interface for your website. Built with React"
@@ -16,17 +14,10 @@
     - "Ramda"
     - "Functional programming"
 
-- name: "loobot"
-  description: "Chatbot interface for UWaterloo Open Data API with Natural Language Processing"
-  link: "https://github.com/lpan/loobot"
-  tags:
-    - "JavaScript"
-    - "node.js"
-    - "NLP"
-
-- name: "dotfiles manager"
-  description: "Configurable dotfiles manager"
+- name: "dotfiles"
+  description: "My dank dotfiles please check it out"
   link: "https://github.com/lpan/dotfiles"
   tags:
-    - "Python"
+    - "Dank"
     - "Bash"
+    - "..... files"
