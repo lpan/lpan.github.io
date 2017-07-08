@@ -16,11 +16,11 @@ them and eventually structure our complex UI as a Tree.  Additionally, we can do
 neat things such as high order functions on our components (remember, components
 are functions!!), react-redux's `connect` is a perfect example.
 
-React claims itself to be a library but not a framework. I totally agree with
-this claim as all it does is providing an unopinionated API so that we can
-declare our View as as a function of State. However, it also comes with a state
-management API `setState` which, in my opinion, is an opinionated way of
-managing the application state.
+React claims itself to be a library but not a framework. I agree with this claim
+as all it does is providing an unopinionated API so that we can declare our View
+as as a function of State. However, it also comes with a state management API
+`setState` which, in my opinion, is an opinionated way of managing the
+application state.
 
 It is totally feasible to build a relatively complex application without a
 *state management* library in React.
@@ -37,21 +37,21 @@ functional nature, data flows in one direction. The root component needs to pass
 mutation functions down to their children. This will result in boilerplate and
 obfuscated code. Most importantly, **the shape of your state tree has to match
 the shape of your UI tree**. This constraint makes it difficult to model your
-application state. Most importantly, your state is not always a tree, it is most
-likely a graph in real life. As for our task management application, let's say
-we want to introduce an admin user who can delete other users' tasks. We want to
-render a `x` next to a task if the current signed-in user is an admin. With
-React's state management API, you will end up passing `isAdmin` down to every
-single `Task` component!
+application state. But our state is not always a tree, it is most likely a graph
+in real life. As for our task management application, let's say we want to
+introduce an admin user who can delete other users' tasks. We want to render a
+`x` next to a task if the current signed-in user is an admin. With React's state
+management API, you will end up passing `isAdmin` down to every single `Task`
+component!
 
 # Redux
 
 The biggest problem Redux (and many Flux libraries) solved is that you can model
 your application state tree independently from your UI tree. With
 `mapStateToProps` and selectors, you can `connect` a node or multiple nodes of
-the state tree to a node on your UI tree. In addition to that, Redux also
-enforces a few rules which introduces a bunch of boilerplate but makes your app
-easier to reason about. To name a few,
+the state tree to a node on your UI tree. In addition to that, Redux enforces a
+few rules which introduces a bunch of boilerplate but makes your app easier to
+reason about. To name a few,
 
 * `Managed mutations`: All mutations must be requested and it is applied one
   at a time. -> consistent
