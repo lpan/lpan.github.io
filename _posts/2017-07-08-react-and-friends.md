@@ -28,9 +28,9 @@ It is totally feasible to build a relatively complex application without a
 Let's say we are making a task management application. We have a list of users
 and each user has a list of tasks. Using the above approach, we will store the
 entire state (root state) in the root component. Then, we pass the lists of
-tasks along with users to `User` components. On next, we pass each individual task
-data to `Task` components. Task components will be the leaf nodes in our UI tree
-in this case.
+tasks along with users to `User` components. Afterwards, we pass each individual
+task data to `Task` components. Task components will be the leaf nodes in our UI
+tree in this case.
 
 There are a few problems with this approach. First of all, due to React's
 functional nature, data flows in one direction. The root component needs to pass
@@ -81,9 +81,9 @@ components. That is pretty neat!
 
 # Conclusion
 
-Single page apps make our users happy but our lives hard. Here are my two cents
-on the current React ecosystem. I am currently fiddling with Datomic and
-om-next. om-next's query language is much simpler than Graphql (familiar data
-structure vs a DSL). I am planning to build a side project using those two
+Single page apps make our users happy but our lives hard. I hope you enjoyed my
+two cents on the React ecosystem in 2017. Currently, I am fiddling with Datomic
+and om-next. IMO om-next's query language is much simpler than Graphql (familiar
+data structure vs a DSL). I am planning to build a side project using those two
 technologies and hopefully I will be able to write a blog article about them in
 the near future.
