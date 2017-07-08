@@ -11,11 +11,10 @@ categories: programming
 React truly revolutionized modern UI development. Instead of imperially mutating
 the View based on the newly arrived data, React enables us to declare the View
 as a function of state `V = f(state)`. In React terms, we call those functions
-`f: State -> View` *components* and thanks to the nature of *functions*, we are
-able to compose them and eventually structure our complex UI as a Tree.
-Additionally, we can do neat things such as high order functions on our
-components (remember, components are functions!!), react-redux's `connect` is a
-perfect example.
+*components* and thanks to the nature of *functions*, we are able to compose
+them and eventually structure our complex UI as a Tree.  Additionally, we can do
+neat things such as high order functions on our components (remember, components
+are functions!!), react-redux's `connect` is a perfect example.
 
 React claims itself to be a library but not a framework. I totally agree with
 this claim as all it does is providing an unopinionated API so that we can
@@ -24,7 +23,7 @@ management API `setState` which, in my opinion, is an opinionated way of
 managing the application state.
 
 It is totally feasible to build a relatively complex application without a
-'state management' library in React.
+*state management* library in React.
 
 Let's say we are making a task management application. We have a list of users
 and each user has a list of tasks. Using the above approach, we will store the
