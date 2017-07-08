@@ -23,8 +23,6 @@ declare our View as as a function of State. However, it also comes with a state
 management API `setState` which, in my opinion, is an opinionated way of
 managing the application state.
 
-### Building an app with Vanilla React
-
 It is totally feasible to build a relatively complex application without a
 'state management' library in React.
 
@@ -47,7 +45,7 @@ render a `x` next to a task if the current signed-in user is an admin. With
 React's state management API, you will end up passing `isAdmin` down to every
 single `Task` component!
 
-### Redux
+# Redux
 
 The biggest problem Redux (and many Flux libraries) solved is that you can model
 your application state tree independently from your UI tree. With
@@ -64,7 +62,7 @@ easier to reason about. To name a few,
 
 * `Immutability` -> cool development tools
 
-### Relay/Apollo-client
+# Relay/Apollo-client
 
 Redux is cool but it does not provide a solution to handle the data
 fetching/caching layer. Developers usually have to develop a custom solution. It
