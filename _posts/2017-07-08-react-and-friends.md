@@ -6,8 +6,7 @@ comments: true
 categories: programming
 ---
 
-# React
-
+# Introduction
 React truly revolutionized modern UI development. Instead of imperially mutating
 the View based on the newly arrived data, React enables us to declare the View
 as a function of state `V = f(state)`. In React terms, we call those functions
@@ -16,6 +15,7 @@ them and eventually structure our complex UI as a Tree.  Additionally, we can do
 neat things such as high order functions on our components (remember, components
 are functions!!), react-redux's `connect` is a perfect example.
 
+# React
 React claims itself to be a library but not a framework. I agree with this claim
 as all it does is providing an unopinionated API so that we can declare our View
 as as a function of State. However, it also comes with a state management API
@@ -45,7 +45,6 @@ management API, you will end up passing `isAdmin` down to every single `Task`
 component!
 
 # Redux
-
 The biggest problem Redux (and many Flux libraries) solved is that you can model
 your application state tree independently from your UI tree. With
 `mapStateToProps` and selectors, you can `connect` a node or multiple nodes of
@@ -62,7 +61,6 @@ reason about. To name a few,
 * `Immutability` -> cool development tools
 
 # Relay/Apollo-client
-
 Redux is cool but it does not provide a solution to handle the data
 fetching/caching layer. Developers usually have to develop a custom solution. It
 is pretty fun to check out how [different people implement data fetching with
@@ -80,7 +78,6 @@ components. That is pretty neat!
 
 
 # Conclusion
-
 Single page apps make our users happy but our lives hard. I hope you enjoyed my
 two cents on the React ecosystem in 2017. Currently, I am fiddling with Datomic
 and om-next. IMO om-next's query language is much simpler than Graphql (familiar
