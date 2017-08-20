@@ -8,6 +8,12 @@ url: "http://lpan.io"
 twitter_username: l_pan_
 github_username: lpan
 
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+
 # Build settings
 markdown: kramdown
 
