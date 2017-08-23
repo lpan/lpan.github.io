@@ -10,13 +10,13 @@ categories: programming
 
 As a modern JavaScript developer, I have worked on numerous single page
 applications with various technology stacks.  I know enough of those
-technologies to be productive. I learnt the best practice and knew when to apply
+technologies to be productive. I learned the best practices and learned when to apply
 them. I tried to stay on the cutting-edge and adopt new programming patterns
 early.  However, I was never confident to say that I understand `[insert state
 mangement library name here]`. I know how to use them but I did not know why to
 use them. Until I started to work on `viw`.
 
-For those of you who has never heard of `viw`, make sure to check it out,
+For those of you who have never heard of `viw`, make sure to check it out,
 [github.com/lpan/viw](https://github.com/lpan/viw). It is a VI-like,
 terminal-based text editor written in C. I implemented `Undo & Redo` with an
 event-sourcing inspired algorithm and I applied the data-driven programming
@@ -31,12 +31,12 @@ briefly talk about the `Unidirectional UI` pattern.
 # Introduction
 
 It is all about working with constraints. In C, it is hard to find recipes for
-stuffs that you want to do. Libraries and frameworks like Redux that force you
+stuff that you want to do. Libraries and frameworks like Redux that force you
 to employ a particular design pattern simply do not exist.  As a result, when I
 was working on `viw`, I was forced to make many seemingly trivial decisions on
 my own: `when do I trigger an update to the UI?`, `how should I categorize those
 functions?`, `how should I name this file?`. As I am adding more features to the
-project, I have to constantly refactor, change internal APIs and move stuffs
+project, I have to constantly refactor, change internal APIs and move stuff
 around.
 
 Here are two big refactorings I have done:
@@ -79,7 +79,7 @@ to **add** new entries.
 ![og todo app](/assets/img/2017-08-19-todoapp.png)
 
 As front end developers, the first thing we should do when given a problem like
-this is to identify what are the **incoming events**.
+this is to identify what the **incoming events** are.
 
 1. User **clicks** on the "add todo" button.
 2. User **enters** a character into the input field
@@ -159,7 +159,7 @@ This is bad because:
 * Hard to test (functions are not pure).
 
 Unidirectional UI pattern is an attempt of **data-driven programming** in the UI
-world. Instead of making a series effects right away in respond to the incoming
+world. Instead of making a series of effects right away in respond to the incoming
 events, we do data transformation first. Then we emit all the effects based on
 the newly transformed data (push effects to the edges). In other words, instead
 of *do incrementCounter!* and then *do renderNewTodo!*, we "mutate" a data
