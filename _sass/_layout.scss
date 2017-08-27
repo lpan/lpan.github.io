@@ -13,27 +13,7 @@
 }
 
 .header-main {
-  @extend .inline-display;
-}
-
-.header-nav-list {
-  @extend .inline-display;
-
-  list-style: none;
   margin: 0;
-  padding: 0;
-  margin-left: $spacing-unit * 8;
-  li {
-    @extend .inline-display;
-  }
-
-  @include media-query($on-laptop) {
-    margin-left: $spacing-unit * 4;
-  }
-
-  @include media-query($on-palm) {
-    margin-left: 0;
-  }
 }
 
 /**
@@ -60,7 +40,7 @@
 
   .footer-addition {
     font-size: $small-font-size;
-  
+
     a {
       font-style: italic;
     }
