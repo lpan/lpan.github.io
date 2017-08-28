@@ -18,7 +18,4 @@ defaults:
 markdown: kramdown
 
 permalink: /:title/
-
-# personal config
-operation_system: "Fedora"
-desktop_environment: "Gnome 3"
+resume_url: "https://drive.google.com/file/d/0B9a8WtySgJxCSjM1WnpRMnh2bmM/view?usp=sharing"
