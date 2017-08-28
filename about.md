@@ -22,13 +22,17 @@ I am currently learning Clojure.
 <br />
 # Projects
 
-## [VI Worsened](https://github.com/lpan/viw)
-It is my coolest project so far. It is a VI-like, terminal-based text editor
+## VI Worsened
+*[github.com/lpan/viw](https://github.com/lpan/viw)*
+
+Viw is my coolest project so far. It is a VI-like, terminal-based text editor
 with undo & redo written in C. I drew inspirations from `event sourcing`,
 `data-driven programming` and the `flux architecture`. Make sure to read my blog
 [What I learnt from coding a text editor in C](/what-i-learnt-from-viw)
 
-## [Rebash](https://github.com/lpan/rebash)
+## Rebash
+*[github.com/lpan/rebash](https://github.com/lpan/rebash)*
+
 This project is for sure one of my most underrated projects. Most people I
 talked to showed 0 interest to this project. However, this project is what got
 me into functional programming. It is a `configurable` terminal emulator React
@@ -43,11 +47,12 @@ component. I was too lazy to style it but trust me, it is really cool.
 I worked at Universe as a software developer intern from `May 2017` to `August
 2017`.
 
-I first worked on the embeddable widgets team. I upgraded react-router from v2
-to v4, set up code splitting and completely redesigned the third-party script
+I first worked on the embeddable widgets code base. I upgraded react-router from
+v2 to v4, set up code splitting and completely redesigned the third-party script
 that deploys Universe's embeddable widget. This allows multiple embeddable
-widgets to exist in the same repository and to be deployed the same way. It also
-unlocks many previously impossible features such as widget customization, etc.
+widgets to exist in the same repository and to be deployed in a uniform way. It
+also unlocks many previously impossible features such as widget customization,
+etc.
 
 To the end my internship, I worked with the platform team to release Universe's
 public GraphQL API. I implemented a few resolvers as well as improving the
