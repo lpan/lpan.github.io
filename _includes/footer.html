@@ -1,23 +1,5 @@
 <footer class="footer-wrapper">
 
-  {% if page.url == "/resume/" %}
-    <p class="footer-addition">
-      To request my full résumé, email me at
-      <a href="mailto:lawrencefeipan@gmail.com" target="_top">
-        lawrencefeipan@gmail.com
-      </a>
-    </p>
-  {% endif %}
-
-  {% if page.url == "/projects/" %}
-    <p class="footer-addition">
-      You can view all my open source projects on my
-      <a href="https://github.com/lpan?tab=repositories" target="_blank">
-        github
-      </a>
-    </p>
-  {% endif %}
-
   <ul>
     <li>
       {% include icon-github.html username=site.github_username %}
