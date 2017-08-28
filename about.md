@@ -9,11 +9,12 @@ permalink: /about/
 My name is Lawrence and I am a software developer.
 
 I believe in `the right tool for the right job`, and thus I am constantly
-learning and experimenting in order to expand my toolbox. I also try to stay
-cutting-edge and I am always open to adopt new paradigms.
+learning and experimenting new technologies with the purpose of expanding my
+toolbox.
 
-I pride myself in being a well-rounded full-stack developer. I have a strong background in modern web UI development. But I also have industry
-experience doing back-end work with Rails, PostgreSQL and MongoDB.
+I pride myself in being a well-rounded full-stack developer. I have a strong
+background in modern web UI development. But I also have professional experience
+doing back-end work with Rails, PostgreSQL and MongoDB.
 
 I am currently learning Clojure.
 
@@ -33,10 +34,10 @@ with undo & redo written in C. I drew inspirations from `event sourcing`,
 ## Rebash
 *[github.com/lpan/rebash](https://github.com/lpan/rebash)*
 
-This project is for sure one of my most underrated projects. Most people I
-talked to showed 0 interest to this project. However, this project is what got
-me into functional programming. It is a `configurable` terminal emulator React
-component. I was too lazy to style it but trust me, it is really cool.
+Rebash is definitely one of my most underrated projects. Most people I talked to
+showed 0 interest in it. However, this project is what got me into functional
+programming. It is a `configurable` terminal emulator React component. I was too
+lazy to style it but trust me, it is really cool.
 
 *Visit my [Github](https://github.com/lpan) for more.*
 
