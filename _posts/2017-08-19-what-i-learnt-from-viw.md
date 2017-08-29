@@ -231,3 +231,8 @@ With this pattern, we get the benefits of functional programming:
 # Conclusion
 Unidirectional UI is an attempt to bring data-driven programming to the UI
 world. Disagree with me? Feel free to leave a comment below!
+
+**Edit 2017-08-29:** This article has been discussed on [Hacker
+News](https://news.ycombinator.com/item?id=15115874) and
+[r/programming](https://www.reddit.com/r/programming/comments/6w9qxj/what_i_learnt_from_coding_a_text_editor_in_c/).
+Thanks to @mxstbr and @wowamit for submitting them :)
