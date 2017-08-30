@@ -5,8 +5,10 @@ name: 'lpan.io'
 description: "Lawrence Pan's profile and blog"
 baseurl: ""
 url: "http://lpan.io"
+
 twitter_username: l_pan_
 github_username: lpan
+linkedin_username: lawrence-pan
 
 defaults:
   - scope:
