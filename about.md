@@ -9,8 +9,7 @@ permalink: /about/
 My name is Lawrence and I am a software developer.
 
 I believe in `the right tool for the right job`, and thus I am constantly
-learning and experimenting new technologies with the purpose of expanding my
-toolbox.
+learning and experimenting new technologies to expand my toolbox.
 
 I pride myself in being a well-rounded full-stack developer. I have a strong
 background in modern web UI development. But I also have professional experience
