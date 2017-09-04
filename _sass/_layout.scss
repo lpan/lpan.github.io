@@ -30,8 +30,20 @@
 
     li {
       display: inline-block;
+
+      .username {
+        color: $grey-color-dark;
+        position: relative;
+        right: 4px;
+      }
+
       a:hover {
         text-decoration: none;
+
+        .username {
+          color: $brand-color;
+        }
+
         svg > path {
           fill: $brand-color;
         }
