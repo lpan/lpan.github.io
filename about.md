@@ -56,8 +56,8 @@ etc.
 
 To the end my internship, I worked with the platform team to release Universe's
 public GraphQL API. I implemented a few resolvers as well as improving the
-documentation (field descriptions). As a highlight, I released Universe's first
-single page application that consumes the new GraphQL endpoint to production.
+documentation (field descriptions). I released Universe's first single page
+application that consumes the new GraphQL endpoint to production.
 
 ## [Plotly](https://plot.ly)
 I worked at Plotly as a front-end developer intern from `May 2016` to `August
