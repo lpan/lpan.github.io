@@ -6,7 +6,8 @@ permalink: /about/
 
 # About me
 
-My name is Lawrence and I am a software developer.
+My name is Lawrence and I am a Software Engineering student at the University of
+Waterloo.
 
 I believe in `the right tool for the right job`, and thus I am constantly
 learning and experimenting new technologies to expand my toolbox.
