@@ -45,23 +45,23 @@ lazy to style it but trust me, it is really cool.
 # Work experience
 
 ## [Universe](https://www.universe.com)
-I worked at Universe as a software developer intern from `May 2017` to `August
+I worked at Universe as a full-stack engineer co-op from `May 2017` to `August
 2017`.
 
-I first worked on the embeddable widgets code base. I upgraded react-router from
+I first worked on the embedded widgets code base. I upgraded react-router from
 v2 to v4, set up code splitting and completely redesigned the third-party script
-that deploys Universe's embeddable widget. This allows multiple embeddable
+that deploys Universe's embedded widgets. This allows multiple embeddable
 widgets to exist in the same repository and to be deployed in a uniform way. It
 also unlocks many previously impossible features such as widget customization,
 etc.
 
-To the end my internship, I worked with the platform team to release Universe's
-public GraphQL API. I implemented a few resolvers as well as improving the
-documentation (field descriptions). I released Universe's first single page
-application that consumes the new GraphQL endpoint to production.
+Toward the end of my co-op term, I worked with the platform team to release
+Universe's public GraphQL API. I was involved with reimagining Universe's domain
+models. I also shipped Universe's first single page application that consumes
+the new GraphQL endpoint to production.
 
 ## [Plotly](https://plot.ly)
-I worked at Plotly as a front-end developer intern from `May 2016` to `August
+I worked at Plotly as a front-end engineer co-op from `May 2016` to `August
 2016`.
 
 At Plotly, my job was maintaining a large-scale React & Redux SaaS application
