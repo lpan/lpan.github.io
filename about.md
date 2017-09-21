@@ -16,7 +16,7 @@ I pride myself in being a well-rounded full-stack developer. I have a strong
 background in modern web UI development and I have professional experience doing
 back-end work with Rails, PostgreSQL and MongoDB.
 
-I am currently learning Clojure and exploring the world of distributed systems.
+I am currently learning Clojure and distributed systems.
 
 **TL;DR?** [Download my résumé]({{ site.resume_url }}).
 
