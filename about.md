@@ -13,10 +13,10 @@ I believe in `the right tool for the right job`, and thus I am constantly
 learning and experimenting new technologies to expand my toolbox.
 
 I pride myself in being a well-rounded full-stack developer. I have a strong
-background in modern web UI development. But I also have professional experience
-doing back-end work with Rails, PostgreSQL and MongoDB.
+background in modern web UI development and I have professional experience doing
+back-end work with Rails, PostgreSQL and MongoDB.
 
-I am currently learning Clojure.
+I am currently learning Clojure and exploring the world of distributed systems.
 
 **TL;DR?** [Download my résumé]({{ site.resume_url }}).
 
