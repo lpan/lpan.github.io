@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Probability Statistics and Lambda Calculus"
+title:  "Probability and Types"
 date:   2017-10-13
 comments: true
 categories: math
