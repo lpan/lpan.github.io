@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/lpan
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://lpan.io
+  * I am lpan (https://keybase.io/lpan) on keybase.
+  * I have a public key ASCnLppPqg6qSv5K4--c_mfyu3FENV_eq2lxBS6gfhrR_go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a4e50e8bde804e73e15084612d5f64281a13d0db92915a59fa6b6b9abf8c113f0a",
+      "host": "keybase.io",
+      "kid": "0120a72e9a4faa0eaa4afe4ae3ef9cfe67f2bb7144355fdeab6971052ea07e1ad1fe0a",
+      "uid": "30192cc82dc3366ab72b7bf12b874619",
+      "username": "lpan"
+    },
+    "merkle_root": {
+      "ctime": 1511394455,
+      "hash": "218679f2bf72624973b4ade3c3549fa399c943a8aa9f0412a7714dcf2667c776a7abfce7a47e295db876cb3896987f565a479d46516ebe066903b300e4fa11d7",
+      "hash_meta": "5937c266e2d14fe07e0948a12a5362700ee0565dfb9438ee3be67d864a6d95d7",
+      "seqno": 1736570
+    },
+    "service": {
+      "hostname": "lpan.io",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.36"
+  },
+  "ctime": 1511394499,
+  "expire_in": 504576000,
+  "prev": "5569e05c93764d2df3152f10f8b9d41951d14b3773caffebfa84d79a5aa11719",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgpy6aT6oOqkr+SuPvnP5n8rtxRDVf3qtpcQUuoH4a0f4Kp3BheWxvYWTFAzt7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwYTRlNTBlOGJkZTgwNGU3M2UxNTA4NDYxMmQ1ZjY0MjgxYTEzZDBkYjkyOTE1YTU5ZmE2YjZiOWFiZjhjMTEzZjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYTcyZTlhNGZhYTBlYWE0YWZlNGFlM2VmOWNmZTY3ZjJiYjcxNDQzNTVmZGVhYjY5NzEwNTJlYTA3ZTFhZDFmZTBhIiwidWlkIjoiMzAxOTJjYzgyZGMzMzY2YWI3MmI3YmYxMmI4NzQ2MTkiLCJ1c2VybmFtZSI6ImxwYW4ifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MTEzOTQ0NTUsImhhc2giOiIyMTg2NzlmMmJmNzI2MjQ5NzNiNGFkZTNjMzU0OWZhMzk5Yzk0M2E4YWE5ZjA0MTJhNzcxNGRjZjI2NjdjNzc2YTdhYmZjZTdhNDdlMjk1ZGI4NzZjYjM4OTY5ODdmNTY1YTQ3OWQ0NjUxNmViZTA2NjkwM2IzMDBlNGZhMTFkNyIsImhhc2hfbWV0YSI6IjU5MzdjMjY2ZTJkMTRmZTA3ZTA5NDhhMTJhNTM2MjcwMGVlMDU2NWRmYjk0MzhlZTNiZTY3ZDg2NGE2ZDk1ZDciLCJzZXFubyI6MTczNjU3MH0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJscGFuLmlvIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zNiJ9LCJjdGltZSI6MTUxMTM5NDQ5OSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiI1NTY5ZTA1YzkzNzY0ZDJkZjMxNTJmMTBmOGI5ZDQxOTUxZDE0YjM3NzNjYWZmZWJmYTg0ZDc5YTVhYTExNzE5Iiwic2Vxbm8iOjE3LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQEN7pc1zNzAMtARJG/RBBh1+fp2P1Iaq6/QZkX1aMg7qpVNmJoZwNkRF/KxLW5ogZE5XTm/COEqf301Bi7WrGwioc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCCvoLzlx4JEIzqaN8M/qT1y18N2L0MTmAp49mXsrCIl9aN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/lpan
+
+==================================================================
