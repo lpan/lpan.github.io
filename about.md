@@ -16,8 +16,8 @@ TL;DR? [Download my résumé]({{ site.resume_url }}).
 
 ## Work experience
 
-Visit my [Linkedin profile](www.linkedin.com/in/lawrence-pan) to learn about my
-current and past work experience!
+Visit my [Linkedin profile](https://www.linkedin.com/in/lawrence-pan) to learn
+about my current and past work experience!
 
 ## Projects
 
