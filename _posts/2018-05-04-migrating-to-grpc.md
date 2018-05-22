@@ -6,20 +6,20 @@ comments: true
 categories: programming
 ---
 
-## Introduction
+# Introduction
 
 During my internship at Datadog this past winter, I took ownership of a critical
 service which serves around 40,000 requests per second as of April 2018.
 
-To improve the reliability and fault tolerance of that service, I migrated the
-service’s inter-process communication (IPC) layer from Datadog’s homegrown
-remote procedure call (RPC) framework to gRPC, an open-source RPC framework made
-by Google.
+To improve its reliability and fault tolerance, I migrated the service’s
+inter-process communication (IPC) layer from Datadog’s homegrown remote
+procedure call (RPC) framework to gRPC, an open-source RPC framework made by
+Google.
 
 In this post, I will discuss why it was worth the effort to migrate to gRPC and
-how gRPC improves the reliability and availability of that service.
+how gRPC increases fault tolerance.
 
-## Context
+# Context
 
 Datadog’s infrastructure consists of numerous single-purpose services. Each
 service can be scaled horizontally to increase its throughput and the instances
@@ -32,63 +32,63 @@ library. Consumers of this service can simply use this client library to issue
 RPCs without worrying about service discovery, (client-side) load balancing,
 generating stub, error handling, etc.
 
-## Problems
+# The Old Framework
 
 Originally, consumers communicate with the service using an in-house RPC
-framework. It was built on top of the Redis protocol for convenience reasons:
-rich ecosystem and mature tooling. This made sense when sense years ago when
-Datadog’s infrastructure was not as complex or extensive.
+framework. It was built on top of the Redis protocol for its rich ecosystem and
+mature tooling. This made sense when sense years ago when Datadog’s
+infrastructure was not as complex or extensive.
 
 However, the framework is not optimized for large-scale distributed systems. In
-a distributed system, the network is never reliable and nodes can fail
-unpredictably and independently due to hardware faults or human errors. A
-reliable software needs to tolerate faults. The in-house RPC framework, however,
-does not provide any mechanism to make the inter-process communication more
-reliable.
+a distributed system, network is never reliable and nodes can fail unpredictably
+and independently due to hardware faults or human errors. Reliable software
+tolerates faults. The in-house RPC framework, however, does not provide any
+mechanism to make the inter-process communication more reliable.
 
-### Unreliable Health Check
+# Unreliable Health Check
 
 A service registry is essentially an *eventually consistent* snapshot of the
-current state of the system. It should absolutely not regarded as the only
+current state of the system. It should absolutely not be regarded as the *only*
 source of truth.
 
-For example, when a node suddenly becomes unresponsive (the process is `pkill
--9`'ed, or the VM is shut down), assuming the service registry performs Time to
-Live (TTL) health checks, the registry has to wait for the TTL to expire, which
-can take seconds, before marking the node as dead. Thus, the system can be in an
-inconsistent state.
+For example, when a node suddenly becomes unresponsive (the process gets `pkill
+-9`'ed, running out of file descriptors, etc), assuming the service registry
+performs Time to Live (TTL) health checks, the registry has to wait for the TTL
+timeout to expire, which can take seconds, before marking the node as dead, and
+eventually propagating the change to its consumers. The system can be in
+an inconsistent state.
 
 When a consumer of a service retrieves a list of "healthy" nodes from the
-registry, it is possible that there exists already dead nodes in that list. The
+registry, the list could contain false-positive, already-dead nodes. The
 question then arises: how to ensure RPCs to only be sent to actually healthy
 nodes?
 
-#### Transient Errors vs Fatal Errors
+# Transient Errors vs Fatal Errors
 
 This is where the legacy RPC framework falls short. The framework is unable to
 identify the type of the fault that caused the RPC to fail. The fault could be
-transient, which means that if the sleeps for a while and then retries, the RPC
-will then succeed. On the other hand, the failing RPC can also be caused by a
-*fatal error*. This means that the destination node is dead (process gets `pkill
--9`'ed or the VM gets shut down for maintenance). Therefore, when a fatal error
+transient, which means that if the client waits a bit and retries, the RPC will
+succeed. On the other hand, the failing RPC can also be caused by a *fatal
+error*. This signifies that the destination node may be dead. When a fatal error
 is identified, the client should send the RPC to another node, instead of
 retrying on the same node.
 
 Fatal failures include server resource exhaustion (a server instance being
 overloaded so we might want to retry on a different node), node failures, etc.
 
-Just a side note that a resource exhaustion can be a transient failure as well.
-For example, let's say your server owns the database resource. If the replica (a
-resource) it has been talking to fails, it can retry on a different replica.
-Although it is a fatal failure for the server, from the client's perspective, it
-is a transient failure. Retry on the same server may solve the problem.
+Just to add a side note here: a resource exhaustion can also be a transient
+failure. For example, let's say your server owns the database resource. If the
+replica (a resource) it has been talking to fails, the server will retry on a
+different replica. Although it is a fatal failure for the server, from the
+client's perspective, it is a transient failure. Clients can still send requests
+to the same server.
 
-#### Poor error handling
+# Poor Error Handling
 
 Now, let's go back to the old framework. Since it was not built for distributed
 systems, being able to identify the cause of a RPC failure and handle it
-accordingly was very difficult. (That's why people say programming distributed
-systems is hard! This problem is trivial if everything happens in memory)
+accordingly are very difficult. (That's why people say programming distributed
+systems is hard! This problem would be trivial if everything happens in memory)
 
 As a result, the legacy RPC framework simply sends the failed RPC to another
 random node from the (eventual consistent) service registry with no specific
@@ -96,7 +96,7 @@ error handling.
 
 This approach can lead to many problems. For example, client can run out of
 server-wide retry budget quickly. We use consistent-hashing as the client-side
-load balancing algorithm, if a node fails (regardless the error is fatal or
+load balancing algorithm. If a node fails (regardless the error is fatal or
 transient), all the RPCs that are hashed to that node will fail for the **first
 time**, and then retry.
 
@@ -104,7 +104,7 @@ In addition, if there are more than one false-positive nodes returned from the
 service registry (eg. when doing a rolling restart), the second attempt (the
 retry) may fail as well.
 
-#### Fault tolerance
+# Fault Tolerance
 
 Let's say the service registry returns `n` "healthy" nodes, and among them,
 there are `x` false-positive nodes. Assume we use the old
@@ -120,9 +120,10 @@ If you are good at math, you will quickly see that if our retry budget is
 greater than `x` (assume `x < m`), we can guarantee that all the RPCs will
 eventually succeed.
 
-In other words, our system's fault tolerance linearly depends on the retry
-budget––the total number of failed node the system can tolerate is equalled to
-the retry budget. This is clearly not scalable because retries are expensive.
+In other words, our system's fault tolerance is linearly dependent on the retry
+budget––the total number of failed node the system can tolerate literally is
+*equalled* to the retry budget. This is clearly not scalable because retries are
+expensive.
 
 Having an aggressive retry strategy can result in server resource exhaustion
 which can then leads to [cascading
@@ -130,22 +131,26 @@ failures](http://landing.google.com/sre/book/chapters/addressing-cascading-failu
 On the other hand, conservative retries can exhaust client's resource (because
 of back-offs and jitters) which limit the throughput per instance.
 
-A fault tolerance system does not only minimize errors but also minimize
+A fault tolerant system does not only minimize errors but also minimize
 retries.
 
-### Node Outages
+# Node Outages
 
-A node can fail in many different ways: it can be shut down by the administrator
-for system maintenance; it can be exhausted of system resources (memory, file
-descriptors).
+A node can fail (become Unresponsive) in many different ways: it can be shut
+down by the administrator for system maintenance; it can be exhausted of system
+resources (memory, file descriptors).
 
-Node outage is also one of the trickiest cases to handle. For example, after the
-TCP handshake has been completed and the client has sent the request payload to
-the server, if the server node suddenly fails before it can respond to the RPC,
-the client may hang indefinitely. Although the server is dead, from the client’s
-perspective, the server may be processing a time-consuming query. In other
-words, there is no way for the client to identify the cause of an unresponsive
-node.
+Another complexity introduced by distributed systems. When a node fails, its
+consumers will only see it as *unresponsive*, until the health check service
+thinks it is dead (through TTL, health endpoint checking, etc).
+
+This makes node outage one of the trickiest cases to handle. For example, after
+the TCP handshake has been completed and the client has sent the request payload
+to the server, if the server node suddenly fails before it can respond to the
+RPC, the client may hang indefinitely. Although the server is dead, from the
+client’s perspective, the server may be processing a time-consuming query. In
+other words, there is no way for the client to identify the cause of an
+unresponsive node.
 
 One of the common solutions is to set a RPC deadline based on the expected
 response time, which is typically estimated from the size of the request
@@ -154,7 +159,7 @@ server is faulty. This distinguishes infrastructure faults from application
 faults. However, it is impossible to implement this functionality in the old RPC
 framework.
 
-## gRPC comes to the rescue
+# gRPC Comes to the Rescue
 
 gRPC is a remote procedure call framework developed at Google. It has been
 adopted at many organizations including Netflix and Square.
@@ -164,7 +169,7 @@ integrate with the existing service discovery system, etc. But different from
 the legacy framework, gRPC is optimized for large-scale distributed systems. It
 has a huge emphasis on reliability and fault tolerance.
 
-### Connection Management
+# Connection Management
 
 Instead of treating the service registry as the absolute source of truth, the
 gRPC client library implements a connection state manager to maintain a pool of
@@ -185,26 +190,27 @@ API](https://github.com/grpc/grpc/blob/master/doc/connectivity-semantics-and-api
 This way, especially with consistent hashing, when the gRPC client detects that
 a node is in `TRANSIENT_FAILURE` (even though service registry says it's
 healthy, but it is unresponsive in real life), gRPC will remove the node from
-the bucket list. As a result, the fault tolerance increases significantly and it
-does not depend on the retry budget at all.
+the list of "buckets". With the presence of failed nodes, this would
+significantly reduce the number of retries and even the RPC error rate.
 
-### RPC Deadlines
+# RPC Deadlines
 
 [Deadlines and timeouts are pretty much the
 same...](https://grpc.io/blog/deadlines)
 
 With gRPC, it is also possible to dynamically set a deadline for individual
 RPCs. Setting a deadline allows the client to specify how long it is willing to
-wait for the server to process its request. This can efficiently distinguish
+wait for the server to process its request. This can effectively distinguish
 between fatal failures and long running queries.
 
 We can estimate the maximum response time for a particular type of query with a
-certain payload size. Then we can derive the timeout from it. Thus, when a RPC
-failed because the timeout is exceeded (or deadline is expired), we can be
-confident (98% sure) to say that the server is faulty (overloaded or dead) and
-we may want to retry on a different server node.
+certain payload size. Then we can derive the timeout (max time the client is
+willing to wait for the server) from it. Thus, when a RPC failed because the
+timeout is exceeded (or deadline is expired), we are confident (98% sure) to say
+that the server is faulty (overloaded or dead) and we may want to retry on a
+different server node.
 
-### Application-Level Keepalive
+# Application-Level Keepalive
 
 In addition to the configurable RPC deadlines. gRPC also implements a
 application-wide keepalive protocol, which further increases the fault tolerance
@@ -223,14 +229,14 @@ the client may wait longer. On the other hand, if the server is dead, the client
 can be confident to terminate the TCP connection and retry the RPC on a
 different node.
 
-## Gains
+# Gains
 
 It is hard to measure resiliency gains (can't really say I increase the
-resiliency by `34.5%` or decrease the number of future outage by `(45 - 4i)%` it
-is a complex number because it is in the future?). However, there is in fact one
-notable gain, faster deployment!
+resiliency by `34.5%` or decrease the number of future outages by `(45 - 4i)%`
+it is a complex number because it is in the future?). However, there is in fact
+one notable gain, faster deployment!
 
-### Faster Deployment
+# Faster Deployment
 
 Deploying a service typically requires all its instances to be restarted with a
 new binary. However, depending on how stateful is that service, a restart can
@@ -253,12 +259,10 @@ restarted in larger batches, which *significantly* speeds up the deployment time
 
 Thanks so much for reading! I talked a bunch about resiliency, fault tolerance,
 and the problems with distributed systems! This is also my first distributed
-systems post :D! Previously I have been blogging about UI programming.
+systems post! Previously I have been blogging about UI programming.
 
 Recently I have been reading Martin Kleppmann's [Designing Data-Intensive
 Applications](http://dataintensive.net/) and I was fascinated by the distributed
 data section. I love learning about the replication algorithms, consistency
-models, consensus protocols. Hopefully I can work on another distributed system
-for my next co-op. And maybe get exposure in distributed data!
-
-More blog posts incoming :)
+models, consensus protocols... Hopefully I can work on another distributed
+system for my next internship. And maybe get exposure in distributed data!
