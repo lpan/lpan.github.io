@@ -9,31 +9,20 @@ permalink: /about/
 My name is Lawrence Pan and I am a Software Engineering student at the
 University of Waterloo.
 
-I am currently interested in learning and building large-scale data-intensive
-applications.
+I am interested in distributed systems, especially storing and retrieving
+distributed data.
 
 TL;DR? [Download my résumé]({{ site.resume_url }}).
 
 ## Work experience
 
+I was fortunate enough to intern at the following awesome companies.
+* [Datadog](https://datadoghq.com)
+  * *Jan 2018 - Apr 2018*, New York City
+* [Universe](https://universe.com)
+  * *May 2017 - Aug 2017*, Toronto
+* [Plotly](https://plot.ly)
+  * *May 2016 - Aug 2016*, Montreal
+
 Visit my [Linkedin profile](https://www.linkedin.com/in/lawrence-pan) to learn
-about my current and past work experience!
-
-## Projects
-
-### [lpan/viw](https://github.com/lpan/viw)
-
-VI Worsened (viw) is my coolest project so far. It is a VI-like, terminal-based
-text editor with undo & redo written in C. I drew inspirations from `log-based
-replication`, `data-driven programming` and the `flux architecture`. Make sure
-to read my blog [What I learnt from coding a text editor in
-C](/what-i-learnt-from-viw)
-
-### [lpan/rebash](https://github.com/lpan/rebash)
-
-Rebash is definitely one of my most underrated projects. Most people I talked to
-showed 0 interest in it. However, this project is what got me into functional
-programming. It is a `configurable` terminal emulator React component. I was too
-lazy to style it but trust me, it is really cool.
-
-*Visit my [Github](https://github.com/lpan) for more.*
+more about my work experience!
