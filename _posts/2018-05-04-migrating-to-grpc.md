@@ -97,8 +97,8 @@ error handling.
 This approach can lead to many problems. For example, client can run out of
 server-wide retry budget quickly. We use consistent-hashing as the client-side
 load balancing algorithm. If a node fails (regardless the error is fatal or
-transient), all the RPCs that are hashed to that node will fail for the **first
-time**, and then retry.
+transient), all the RPCs that are hashed to that node will fail on the first
+attempt, and then retry.
 
 In addition, if there are more than one false-positive nodes returned from the
 service registry (eg. when doing a rolling restart), the second attempt (the
