@@ -134,7 +134,7 @@ failures](http://landing.google.com/sre/book/chapters/addressing-cascading-failu
 On the other hand, conservative retries can exhaust client's resource (because
 of back-offs and jitters) which limit the throughput per instance.
 
-A fault tolerant system does not only minimize errors but also minimize
+A fault tolerant system does not only minimize errors but also minimizes
 retries.
 
 # Node Outage
