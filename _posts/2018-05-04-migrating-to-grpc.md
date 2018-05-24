@@ -181,7 +181,7 @@ integrate with the existing service discovery system, etc. But different from
 the legacy framework, gRPC is optimized for large-scale distributed systems. It
 has a huge emphasis on reliability and fault tolerance.
 
-# Connection Management
+# Connection State Management
 
 Instead of treating the service registry as the absolute source of truth, the
 gRPC client library implements a connection state manager to maintain a pool of
@@ -190,11 +190,13 @@ guaranteed healthy connections (sorta like a circuit breaker).
 On initialization, the gRPC client library instantiates a state machine for each
 node returned from the service registry. The initial state for all the nodes is
 `IDLE`. If the gRPC client successfully establishes an connection (completes the
-TCP handshake** to the target node, it will transition the connection state to
+TCP handshake with the target node, it will transition the connection state to
 “READY”. If the connection request is rejected or the connection is detected to
 be faulty, the connection state will be transitioned to `TRANSIENT FAILURE`.
 When a `TRANSIENT_FAILURE` connection is reestablished, it will be transitioned
 back to `READY`.
+
+![gRPC Connection State Diagram](/assets/img/2018-05-22-grpc_conn_states.png)
 
 Source: [gRPC Connectivity Semantics and
 API](https://github.com/grpc/grpc/blob/master/doc/connectivity-semantics-and-api.md)
