@@ -77,22 +77,16 @@ nodes?
 # Transient Errors vs Fatal Errors
 
 This is where the legacy RPC framework falls short. The framework is unable to
-identify the type of the fault that caused the RPC to fail. The fault could be
-transient, which means that if the client waits a bit and retries, the RPC will
-succeed. On the other hand, the failing RPC can also be caused by a *fatal
-error*. This signifies that the destination node may be dead. When a fatal error
-is identified, the client should send the RPC to another node, instead of
-retrying on the same node.
+identify the type of the fault that caused the RPC to fail.
 
-Fatal failures include server resource exhaustion (a server instance being
-overloaded so we might want to retry on a different node), node failures, etc.
+A fault could be transient, which means that if the client waits for a moment
+and retries (resends the previously failed RPC) to the same server node, it will
+eventually succeed.
 
-Just to add a side note here: a resource exhaustion can also be a transient
-failure. For example, let's say your server owns the database resource. If the
-replica (a resource) it has been talking to fails, the server will retry on a
-different replica. Although it is a fatal failure for the server, from the
-client's perspective, it is a transient failure. Clients can still send requests
-to the same server.
+On the other hand, an RPC failure can also be caused by a *fatal error*. This
+may imply that the destination node is dead. When a fatal error is identified,
+the client should send the RPC to another node, instead of retrying on the same
+node.
 
 # Poor Error Handling
 
