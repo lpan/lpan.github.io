@@ -64,14 +64,13 @@ current state of the system. It should absolutely not be regarded as the *only*
 source of truth.
 
 For example, when a node suddenly becomes unresponsive (the process gets `pkill
--9`'ed, running out of file descriptors, etc), assuming the service registry
-performs Time to Live (TTL) health checks, the registry has to wait for the TTL
-timeout to expire, which can take seconds, before marking the node as dead, and
-eventually propagating the change to its consumers. The system can be in
-an inconsistent state.
+-9`'ed, node is running out of file descriptors, etc), it will take seconds or
+maybe even minutes for the service registry (health check service) to realize
+that the node is dead. And it will take more time to propagate this (sad) news
+to every node in the system.
 
-When a consumer of a service retrieves a list of "healthy" nodes from the
-registry, the list could contain false-positive, already-dead nodes. The
+Therefore, when a consumer of a service retrieves a list of "healthy" nodes from
+the registry, the list could contain false-positive, already-dead nodes. The
 question then arises: how to ensure RPCs to only be sent to actually healthy
 nodes?
 
@@ -99,17 +98,16 @@ to the same server.
 
 Now, let's go back to the old framework. Since it was not built for distributed
 systems, being able to identify the cause of a RPC failure and handle it
-accordingly are very difficult. (That's why people say programming distributed
+accordingly was not possible. (That's why people say programming distributed
 systems is hard! This problem would be trivial if everything happens in memory)
 
-As a result, the legacy RPC framework simply sends the failed RPC to another
-random node from the (eventual consistent) service registry with no specific
-error handling.
+As a result, the legacy RPC framework simply sends the failed RPC to a different
+node returned from the (eventually consistent) service registry.
 
-This approach can lead to many problems. For example, client can run out of
-server-wide retry budget quickly. We use consistent-hashing as the client-side
-load balancing algorithm. If a node fails (regardless the error is fatal or
-transient), all the RPCs that are hashed to that node will fail on the first
+This approach can lead to many problems. For example, clients can run out of
+instance-wide retry budget quickly. We use consistent-hashing as the client-side
+load balancing algorithm. If a server node fails (regardless the error is fatal
+or transient), all the RPCs that are hashed to that node will fail on the first
 attempt, and then retry.
 
 In addition, if there are more than one false-positive nodes returned from the
@@ -120,7 +118,7 @@ retry) may fail as well.
 
 Let's say the service registry returns `n` "healthy" nodes, and among them,
 there are `x` false-positive nodes. Assume we use the old
-*retry-on-a-different-node* error handling algorithm and assume that we balance
+*retry-on-a-different-node* error handling technique and assume that we balance
 the load randomly. The probability of the client to send a RPC to a bad node is
 `x / m`.
 
@@ -132,7 +130,7 @@ If you are good at math, you will quickly see that if our retry budget is
 greater than `x` (assume `x < m`), we can guarantee that all the RPCs will
 eventually succeed.
 
-In other words, our system's fault tolerance is linearly dependent on the retry
+In other words, the system's fault tolerance is linearly dependent on the retry
 budget––the total number of failed node the system can tolerate literally is
 *equalled* to the retry budget. This is clearly not scalable because retries are
 expensive.
@@ -148,13 +146,13 @@ retries.
 
 # Node Outage
 
-Node outage is one of the trickiest problems in distributed systems. For
-example, after the TCP handshake has been completed and the client has sent the
-request payload to the server, if the server node suddenly fails before it can
-respond to the RPC, the client may hang indefinitely. Although the server is
-dead, from the client’s perspective, the server may be processing a
-time-consuming query. In other words, there is no way for the client to identify
-the cause of an unresponsive node.
+Node outage is also a tricky problem in distributed systems. For example, after
+the TCP handshake has been completed and the client has sent the request payload
+to the server, if the server node suddenly fails before it can respond to the
+RPC, the client may hang indefinitely. Although the server is dead, from the
+client’s perspective, the server may be processing a time-consuming query. In
+other words, there is no way for the client to identify the cause of an
+unresponsive node.
 
 One of the common solutions is to set a RPC deadline based on the expected
 response time, which is typically estimated from the size of the request
@@ -195,9 +193,10 @@ API](https://github.com/grpc/grpc/blob/master/doc/connectivity-semantics-and-api
 
 This way, especially with consistent hashing, when the gRPC client detects that
 a node is in `TRANSIENT_FAILURE` (even though service registry says it's
-healthy, but it is unresponsive in real life), gRPC will remove the node from
-the list of "buckets". With the presence of failed nodes, this would
-significantly reduce the number of retries and even the RPC error rate.
+healthy, but it is unresponsive in real life), it will simply remove the node
+from the list of "buckets". As a result, RPCs which were originally hashed to
+the failed node will be rehashed to a different but healthy node. This
+significantly reduces the total number of retries.
 
 # RPC Deadlines
 
@@ -209,12 +208,20 @@ RPCs. Setting a deadline allows the client to specify how long it is willing to
 wait for the server to process its request. This can effectively distinguish
 between fatal failures and long running queries.
 
-We can estimate the maximum response time for a particular type of query with a
-certain payload size. Then we can derive the timeout (max time the client is
-willing to wait for the server) from it. Thus, when a RPC failed because the
-timeout is exceeded (or deadline is expired), we are confident (98% sure) to say
-that the server is faulty (overloaded or dead) and we may want to retry on a
-different server node.
+For example, if an RPC hangs, there are two possible causes:
+
+1. The query is very expensive and it will take a while.
+2. The server is dead
+
+For the first case, we only need to wait longer. On the other hand, as for the
+second case, we do not want to wait at all. We should cancel the RPC as soon as
+possible. RPC timeouts & deadlines helps to distinguish between the two causes.
+
+We can estimate the maximum response time for a particular request with a
+certain payload size. Then we can derive the timeout from it. Thus, when an RPC
+fails because the timeout is exceeded (or deadline expired), we can be pretty
+confident to say that the server node is faulty (outcome #2) and we want to
+cancel the RPC and retry on a different node.
 
 # Application-Level Keepalive
 
