@@ -262,13 +262,13 @@ restarted in larger batches, which *significantly* speeds up the deployment time
 
 # Conclusion
 
-Thanks so much for reading! In this post, I talked about the problems with
-distributed systems and how gRPC improves fault tolerance by mitigating these
-problems. This is also my first distributed systems blog post! Previously I have
-been blogging about UI programming.
+In this post, I talked about the problems with distributed systems and how gRPC
+improves fault tolerance by mitigating these problems. This is also my first
+distributed systems blog post. Thanks so much for reading!
 
 Recently I have been reading Martin Kleppmann's [Designing Data-Intensive
 Applications](http://dataintensive.net/) and I was fascinated by the distributed
-data section. I love learning about the replication algorithms, consistency
-models, consensus protocols... Hopefully I can work on another distributed
-system for my next internship. And maybe get exposure in distributed data!
+data section. I find replication algorithms, consistency models, consensus
+protocols, etc., to be very interesting. Hopefully I can work on another
+distributed system for my next internship and gain experience in working with
+distributed data.
