@@ -146,19 +146,15 @@ of back-offs and jitters) which limit the throughput per instance.
 A fault tolerant system does not only minimize errors but also minimize
 retries.
 
-# Node Outages
+# Node Outage
 
-A node can fail (become Unresponsive) in many different ways: it can be shut
-down by the administrator for system maintenance; it can be exhausted of system
-resources (memory, file descriptors), etc.
-
-This makes node outage one of the trickiest cases to handle. For example, after
-the TCP handshake has been completed and the client has sent the request payload
-to the server, if the server node suddenly fails before it can respond to the
-RPC, the client may hang indefinitely. Although the server is dead, from the
-client’s perspective, the server may be processing a time-consuming query. In
-other words, there is no way for the client to identify the cause of an
-unresponsive node.
+Node outage is one of the trickiest problems in distributed systems. For
+example, after the TCP handshake has been completed and the client has sent the
+request payload to the server, if the server node suddenly fails before it can
+respond to the RPC, the client may hang indefinitely. Although the server is
+dead, from the client’s perspective, the server may be processing a
+time-consuming query. In other words, there is no way for the client to identify
+the cause of an unresponsive node.
 
 One of the common solutions is to set a RPC deadline based on the expected
 response time, which is typically estimated from the size of the request
