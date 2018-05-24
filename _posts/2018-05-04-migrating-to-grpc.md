@@ -9,34 +9,46 @@ categories: programming
 # Introduction
 
 During my internship at Datadog this past winter, I took ownership of a critical
-service which serves around 40,000 requests per second as of April 2018.
+service which handles around 40,000 requests per second as of April 2018.
 
 To improve its reliability and fault tolerance, I migrated the service’s
 inter-process communication (IPC) layer from Datadog’s homegrown remote
 procedure call (RPC) framework to gRPC, an open-source RPC framework made by
 Google.
 
-In this post, I will discuss why it was worth the effort to migrate to gRPC and
-how gRPC increases fault tolerance.
-
 # Context
 
-Datadog’s infrastructure consists of numerous single-purpose services. Each
-service can be scaled horizontally to increase its throughput and the instances
-of the services are tied together by inter-process communication (IPC)
-protocols.
+The service is deployed on more than 200 nodes and it is consumed by
+approximately 500 other instances. It comes with a client library. Consumers of
+this service can simply use this client library to issue RPCs without worrying
+about service discovery, (client-side) load balancing, generating stub, error
+handling, etc.
 
-The service I will be discussing is deployed on more than 200 instances and it
-is consumed by approximately 500 other instances. It comes with a client
-library. Consumers of this service can simply use this client library to issue
-RPCs without worrying about service discovery, (client-side) load balancing,
-generating stub, error handling, etc.
+My task was to deprecate this client library, and to migrate its consumers to
+use gRPC to communicate with the service instead.
+
+However, deprecating a legacy package is never easy. There are always
+undocumented edge cases. Blindly replacing an old system with a new one may
+result in regressions (old bugs reappear).
+
+Tests and CI are in fact designed to mitigate this problem. However, in a
+large-scale distributed system, certain tests (for example, load tests) are not
+practically possible.
+
+To fully understand the old system and to ensure that there is no regression
+after the migration, I had to go through the service's outage docs, reinforce
+the monitoring system (metrics, logs, tracing), and design chaos testing
+(`iptables`/`pkill -9` server instances).
+
+In this post, I won't go into details about how I carried out the migration
+(maybe another post!). Instead, I would like to discuss why it was worth the
+effort to migrate to gRPC.
 
 # The Old Framework
 
 Originally, consumers communicate with the service using an in-house RPC
-framework. It was built on top of the Redis protocol for its rich ecosystem and
-mature tooling. This made sense when sense years ago when Datadog’s
+framework. It was built on top of the Redis protocol to take advantage its rich
+ecosystem and mature tooling. This made sense years ago when Datadog’s
 infrastructure was not as complex or extensive.
 
 However, the framework is not optimized for large-scale distributed systems. In
@@ -257,9 +269,10 @@ restarted in larger batches, which *significantly* speeds up the deployment time
 
 # Conclusion
 
-Thanks so much for reading! I talked a bunch about resiliency, fault tolerance,
-and the problems with distributed systems! This is also my first distributed
-systems post! Previously I have been blogging about UI programming.
+Thanks so much for reading! In this post, I talked about the problems with
+distributed systems and how gRPC improves fault tolerance by mitigating these
+problems. This is also my first distributed systems blog post! Previously I have
+been blogging about UI programming.
 
 Recently I have been reading Martin Kleppmann's [Designing Data-Intensive
 Applications](http://dataintensive.net/) and I was fascinated by the distributed
