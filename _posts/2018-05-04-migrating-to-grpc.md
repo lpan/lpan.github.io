@@ -237,10 +237,9 @@ different node.
 
 # Gains
 
-It is hard to measure resiliency gains (can't really say I increase the
-resiliency by `34.5%` or decrease the number of future outages by `(45 - 4i)%`
-it is a complex number because it is in the future?). However, there is in fact
-one notable gain, faster deployment!
+It is hard to measure resiliency gains (can't really say I increased the
+resiliency by `34.5%` or decrease the number of future outages by `29%`).
+However, there is in fact one notable gain, faster deployment!
 
 # Faster Deployment
 
