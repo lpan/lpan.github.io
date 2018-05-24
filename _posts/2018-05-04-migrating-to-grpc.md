@@ -226,7 +226,7 @@ For example, if the server appears to be unresponsive for a certain length of
 time, the application-level keepalive, also known as the gRPC keepalive, will be
 activated. The gRPC client will send a keepalive ping to the server. If the
 server does not respond on time, the client will terminate the connection and
-transition the state of that connection to “TRANSIENT_FAILURE” to remove it from
+transition the state of that connection to `TRANSIENT_FAILURE` to remove it from
 the healthy connection pool.
 
 This distinguishes infrastructure faults from application faults. In the case of
@@ -249,13 +249,13 @@ result its instances to be unavailable for a length of time. For zero downtime
 deploys, instances are typically restarted in batches, so that at a given time,
 there are always enough instances that are available to serve requests.
 
-Before gRPC is introduced, the number of node failures, which the system could
-tolerate, could not exceed the RPC retry budget. As a result, to minimize
-errors, many services had to be restarted one at a time. This is not scalable
+Before gRPC is introduced, the maximum number of node failures the system
+tolerates could not exceed the RPC retry budget. As a result, to minimize
+errors, instances had to be restarted one at a time. This is not scalable
 because a service’s deployment time becomes linearly dependent on the number of
 instances of that service! As for the service I owned at Datadog, with
-approximately 200 instances and a 10-second warm-up time, it sometimes can take
-more than 30 minutes to deploy!
+approximately 200 instances and a 10-second warm-up time, it can take more than
+30 minutes to deploy!
 
 With the migration to gRPC and the increase in fault tolerance, instances can be
 restarted in larger batches, which *significantly* speeds up the deployment time.
