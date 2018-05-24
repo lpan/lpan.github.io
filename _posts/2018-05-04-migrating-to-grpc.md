@@ -150,11 +150,7 @@ retries.
 
 A node can fail (become Unresponsive) in many different ways: it can be shut
 down by the administrator for system maintenance; it can be exhausted of system
-resources (memory, file descriptors).
-
-Another complexity introduced by distributed systems. When a node fails, its
-consumers will only see it as *unresponsive*, until the health check service
-thinks it is dead (through TTL, health endpoint checking, etc).
+resources (memory, file descriptors), etc.
 
 This makes node outage one of the trickiest cases to handle. For example, after
 the TCP handshake has been completed and the client has sent the request payload
