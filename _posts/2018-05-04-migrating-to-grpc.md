@@ -124,7 +124,7 @@ greater than `x` (assume `x < m`), we can guarantee that all the RPCs will
 eventually succeed.
 
 In other words, the system's fault tolerance is linearly dependent on the retry
-budget––the total number of failed node the system can tolerate literally is
+budget––the total number of failed nodes the system can tolerate literally is
 *equalled* to the retry budget. This is clearly not scalable because retries are
 expensive.
 
@@ -173,8 +173,8 @@ guaranteed healthy connections (sorta like a circuit breaker).
 On initialization, the gRPC client library instantiates a state machine for each
 node returned from the service registry. The initial state for all the nodes is
 `IDLE`. If the gRPC client successfully establishes an connection (completes the
-TCP handshake with the target node, it will transition the connection state to
-“READY”. If the connection request is rejected or the connection is detected to
+TCP handshake with the target node), it will transition the connection state to
+`READY`. If the connection request is rejected or the connection is detected to
 be faulty, the connection state will be transitioned to `TRANSIENT FAILURE`.
 When a `TRANSIENT_FAILURE` connection is reestablished, it will be transitioned
 back to `READY`.
