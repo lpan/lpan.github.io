@@ -99,10 +99,9 @@ As a result, the legacy RPC framework simply sends the failed RPC to a different
 node returned from the service registry.
 
 This approach can lead to many problems. For example, clients can run out of
-instance-wide retry budget quickly. Assume RPCs have locality (balance load with
-consistent hashing on the client side). If a server node fails (regardless the
-error is fatal or transient), all the RPCs that are mapped to that node will
-fail on the first attempt, and then retry.
+instance-wide retry budget quickly. Assume RPCs have locality (eg. client-side
+load balancing with consistent hashing). If a server node fails, all the RPCs
+that are mapped to that node will fail on the first attempt, and then retry.
 
 In addition, if there are more than one false-positive nodes returned from the
 service registry (eg. when doing a rolling restart), the second attempt (the
