@@ -8,8 +8,9 @@ categories: programming
 
 # Introduction
 
-During my internship at Datadog this past winter, I took ownership of a critical
-service which handles around 40,000 requests per second as of April 2018.
+During my internship at [Datadog](https://www.datadoghq.com/) this past winter,
+I took ownership of a critical service which handles around 40,000 requests per
+second as of April 2018.
 
 To improve its reliability and fault tolerance, I migrated the service’s
 inter-process communication (IPC) layer from Datadog’s homegrown remote
@@ -100,8 +101,10 @@ node returned from the service registry.
 
 This approach can lead to many problems. For example, clients can run out of
 instance-wide retry budget quickly. Assume RPCs have locality (eg. client-side
-load balancing with consistent hashing). If a server node fails, all the RPCs
-that are mapped to that node will fail on the first attempt, and then retry.
+load balancing with [consistent
+hashing](http://michaelnielsen.org/blog/consistent-hashing/)). If a server node
+fails, all the RPCs that are mapped to that node will fail on the first attempt,
+and then retry.
 
 In addition, if there are more than one false-positive nodes returned from the
 service registry (eg. when doing a rolling restart), the second attempt (the
