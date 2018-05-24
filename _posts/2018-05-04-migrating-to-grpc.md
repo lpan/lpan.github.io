@@ -33,7 +33,7 @@ result in regressions (old bugs reappear).
 
 Tests and CI are in fact designed to mitigate this problem. However, in a
 large-scale distributed system, certain tests (for example, load tests) are not
-practically possible.
+practically possible to be included in the CI pipeline.
 
 To fully understand the old system and to ensure that there is no regression
 after the migration, I had to go through the service's outage docs, reinforce
@@ -51,7 +51,7 @@ framework. It was built on top of the Redis protocol to take advantage its rich
 ecosystem and mature tooling. This made sense years ago when Datadog’s
 infrastructure was not as complex or extensive.
 
-However, the framework is not optimized for large-scale distributed systems. In
+However, the framework was not optimized for large-scale distributed systems. In
 a distributed system, network is never reliable and nodes can fail unpredictably
 and independently due to hardware faults or human errors. Reliable software
 tolerates faults. The in-house RPC framework, however, does not provide any
@@ -77,7 +77,7 @@ nodes?
 # Transient Errors vs Fatal Errors
 
 This is where the legacy RPC framework falls short. The framework is unable to
-identify the type of the fault that caused the RPC to fail.
+identify the type of fault that causes an RPC to fail.
 
 A fault could be transient, which means that if the client waits for a moment
 and retries (resends the previously failed RPC) to the same server node, it will
@@ -96,13 +96,13 @@ accordingly was not possible. (That's why people say programming distributed
 systems is hard! This problem would be trivial if everything happens in memory)
 
 As a result, the legacy RPC framework simply sends the failed RPC to a different
-node returned from the (eventually consistent) service registry.
+node returned from the service registry.
 
 This approach can lead to many problems. For example, clients can run out of
-instance-wide retry budget quickly. We use consistent-hashing as the client-side
-load balancing algorithm. If a server node fails (regardless the error is fatal
-or transient), all the RPCs that are hashed to that node will fail on the first
-attempt, and then retry.
+instance-wide retry budget quickly. Assume RPCs have locality (balance load with
+consistent hashing on the client side). If a server node fails (regardless the
+error is fatal or transient), all the RPCs that are mapped to that node will
+fail on the first attempt, and then retry.
 
 In addition, if there are more than one false-positive nodes returned from the
 service registry (eg. when doing a rolling restart), the second attempt (the
