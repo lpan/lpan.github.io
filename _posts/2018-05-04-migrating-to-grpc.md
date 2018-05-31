@@ -263,6 +263,22 @@ approximately 200 instances and a 10-second warm-up time, it can take more than
 With the migration to gRPC and the increase in fault tolerance, instances can be
 restarted in larger batches, which *significantly* speeds up the deployment time.
 
+# More Reliable Performance
+
+The response time of an RPC is the time between when the client initializes the
+request and when the client actually receives the response. If an RPC fails and
+the client decides to retry, the retry back-off time also contributes to the
+response time of the RPC.
+
+Therefore, retries can directly impact a system's performance. Previously with
+the old RPC framework, an unresponsive node can result in a large number retries
+or hanging RPCs. A rolling restart or independent node outages can potentially
+affect the throughput of the system.
+
+The migration to gRPC greatly mitigated this problem. Thanks to gRPC's *per RPC
+timeout*, we are completely immune to hanging RPCs. The number of retries is
+also minimized with the connection state management feature.
+
 # Conclusion
 
 In this post, I talked about the problems with distributed systems and how gRPC
