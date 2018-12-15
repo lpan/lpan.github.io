@@ -4,7 +4,7 @@ title: About - Lawrence Pan
 permalink: /about/
 ---
 
-# About me
+## About me
 
 My name is Lawrence Pan (lpan) and I am a Software Engineering student at the
 University of Waterloo.
@@ -19,6 +19,8 @@ In my spare time, besides chilling with my friends, I love practicing Yoga,
 lifting weights, and reading books (listening to audio books).
 
 I also LOVE dogs, especially Golden Retrievers!
+
+<br>
 
 ## Work experience
 
