@@ -17,6 +17,8 @@ TL;DR? [Download my résumé]({{ site.resume_url }}).
 ## Work experience
 
 I was fortunate enough to intern at the following awesome companies.
+* [PlanGrid](https://plangrid.com)
+  * *Sep 2018 - Dec 2018*, San Francisco
 * [Datadog](https://datadoghq.com)
   * *Jan 2018 - Apr 2018*, New York City
 * [Universe](https://universe.com)
