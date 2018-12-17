@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "All aboard the gRPC train"
+title:  "All Aboard the gRPC Train"
 date:   2018-05-22
 comments: true
 categories: programming
