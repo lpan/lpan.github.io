@@ -7,8 +7,9 @@ categories: linux
 ---
 
 In this blog post, I want to discuss one of my recent attempts to create a
-simple one-liner Linux Dropbox client with only **free** components, including
-[rclone](https://rclone.org/), [entr](http://eradman.com/entrproject/), and
+simple one-liner Linux Dropbox client using only **free** and **open-source**
+components, including [rclone](https://rclone.org/),
+[entr](http://eradman.com/entrproject/), and
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/).
 
 # Context
@@ -60,8 +61,9 @@ proprietary.
 
 # rclone!
 
-I eventually ran into [rclone](https://rclone.org/) and realized that it is
-exactly what I am looking for. `rclone` is like `rsync` but for "cloud storage".
+I ran into [rclone](https://rclone.org/) and realized that it is exactly what I
+was looking for. `rclone` is simple but powerful, just like `rsync` but for
+"cloud storage".
 
 It not only takes care of integrity check, synchronization efficiency, etc., but also
 provides [a simple CRUD
@@ -83,12 +85,13 @@ rclone sync $ORG_DIR $REMOTE:org
 
 # entr
 
-[entr](http://eradman.com/entrproject/) is a command runner that uses the
+[entr](http://eradman.com/entrproject/) is a command runner that leverages the
 [inotify](http://man.he.net/?section=all&topic=inotify) API. It basically allows
-you to run a command based on file changes without *polling* the file system.
+you to run a command triggered by file changes, without *polling* the file
+system.
 
-From their official documentation, one of the common usages is to *rebuild the
-project when any of the source files change*.
+From their [documentation](http://eradman.com/entrproject/), one of the common
+usages is to *rebuild the project when any of the source files change*.
 
 ```
 ag -l | entr make
