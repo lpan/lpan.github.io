@@ -15,12 +15,12 @@ components, including [rclone](https://rclone.org/),
 # Context
 
 Recently, the proprietary Dropbox Linux client dropped support for all Linux
-file systems except *unencrypted ext4*. My home directory is "unfortunately"
-encrypted. I run Ubuntu Bionic on my 2-year-old Thinkpad t460s.
+file systems except *unencrypted ext4*. However, my home directory is
+"unfortunately" encrypted.
 
-In early December, the proprietary Dropbox Linux client I have been using for
-the past year stopped working. It logged me out, and prompted me to choose a
-different sync folder on a "supported file system".
+In early December, the proprietary Dropbox Linux client I have been using
+stopped working. It logged me out, and prompted me to choose a different sync
+folder on a "supported file system".
 
 # How I use Dropbox
 
