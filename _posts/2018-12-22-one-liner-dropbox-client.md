@@ -47,7 +47,7 @@ mom's Macbook. Thanks mom!
 When the Dropbox client stopped working, my main focus was to find another
 similarly feature-rich remote storage client for Linux. I also wouldn't mind
 migrating to another storage back-end, such as Google Drive or AWS S3. Some of
-the optioned I considered include
+the other options I considered include
 [overGrive](https://www.thefanclub.co.za/overgrive) and
 [insync](https://www.insynchq.com/).
 
@@ -180,3 +180,7 @@ client.
 Thanks so much for reading! I really hope you enjoy this post. Got a better way
 to do the same job, or know how to extend the script for another use case? Let
 me know in the comment section below!
+
+**Edit 2018-12-24:** This article has been discuss on
+[r/linux](https://www.reddit.com/r/linux/comments/a92m1u/my_oneliner_linux_dropbox_client/).
+Thanks @boi_from_the_loo for submitting!
