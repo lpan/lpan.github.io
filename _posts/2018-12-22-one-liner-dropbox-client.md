@@ -7,7 +7,7 @@ categories: linux
 ---
 
 In this blog post, I want to discuss one of my recent attempts to create a
-simple one-liner Linux Dropbox client using only **free** and **open-source**
+simple one-liner Linux Dropbox client using only free and open-source
 components, including [rclone](https://rclone.org/),
 [entr](http://eradman.com/entrproject/), and
 [systemd](https://www.freedesktop.org/wiki/Software/systemd/).
@@ -15,7 +15,7 @@ components, including [rclone](https://rclone.org/),
 # Context
 
 Recently, the proprietary Dropbox Linux client dropped support for all Linux
-file systems except *unencrypted ext4*. However, my home directory is
+file systems except *unencrypted ext4*. And, my home directory is
 "unfortunately" encrypted.
 
 In early December, the proprietary Dropbox Linux client I have been using
