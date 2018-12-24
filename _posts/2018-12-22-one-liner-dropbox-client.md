@@ -15,39 +15,41 @@ components, including [rclone](https://rclone.org/),
 # Context
 
 Recently, the proprietary Dropbox Linux client dropped support for all Linux
-file systems except *unencrypted ext4*. "Unfortunately", my home directory is
+file systems except *unencrypted ext4*. My home directory is "unfortunately"
 encrypted. I run Ubuntu Bionic on my 2-year-old Thinkpad t460s.
 
 In early December, the proprietary Dropbox Linux client I have been using for
 the past year stopped working. It logged me out, and prompted me to choose a
-sync folder on a "supported file system".
+different sync folder on a "supported file system".
 
 # How I use Dropbox
 
 I live in Emacs, and I am a heavy [Org mode](https://orgmode.org/) user. My use
-case of Dropbox is basically "**continuously** backing up my org files". And I
-only write Org notes on **one** computer.
+case of Dropbox is basically "**continuously** backing up my org files".
 
-If you know a bit data infrastructure, my use case of Dropbox is literally
+If you are also into data infrastructure, my use case of Dropbox is literally
 "asynchronous single-master replication for fault tolerance purposes". All
 writes go through my Thinkpad, the master. The remote Dropbox folder is just a
-read-only follower replica that I occasionally "issue read-only queries" to, or
-used as a backup to construct a new master when the current master fails or gets
-stolen.
+read-only follower that I occasionally "issue read-only queries" to, or used as
+a backup to construct a new master when the current master fails or gets stolen.
 
-Sorry for being a bit off-topic. Nevertheless, this replication setup saved my
-life multiple times. I still remember that the motherboard on my Thinkpad was
-fried during an exam season. Since I replicated my notes to Dropbox, I was able
-to view them on my mom's Macbook. Thank you mom!
+Nevertheless, this replication setup has saved my life multiple times. I still
+remember, very vividly, that my Thinkpad couldn't boot during the exam season at
+the end of my sophomore year. Since I continuously replicated my all notes to
+Dropbox, I didn't lose any data and I was able to view them on my mom's Macbook.
+Thank you mom!
 
 # My failed attempts
 
-I was busy lately until today, so I didn't invest much efforts in fixing my
-"continuous syncing setup" when it was broken in early December. However, I did
-try to poke around a bit. I discovered a few other remote file system clients
-for Linux, including [overGrive](https://www.thefanclub.co.za/overgrive) and
-[insync](https://www.insynchq.com/). However, I found them to be way too
-feature-rich, and not **well-suited for my use case**.
+When the Dropbox client stopped working, my main focus was to find another
+similarly feature-rich remote storage client for Linux. I just wanted something
+to work so I wouldn't mind migrating to another storage back-end, such as Google
+Drive or AWS S3. Some of the candidates that I poked around with include
+[overGrive](https://www.thefanclub.co.za/overgrive) and
+[insync](https://www.insynchq.com/).
+
+However, I concluded at the end that these solutions are way too feature-rich,
+and not **well-suited for my use case**.
 
 For example, these clients are modelled as *mounting a remote file system onto
 your file system*. They try really hard to abstract the remote file systems away
@@ -55,26 +57,24 @@ by making them look and feel like local file systems. They typically implement
 two-way syncing, automatically mapping remote file types to Linux file types,
 etc.
 
-I don't need this level of abstraction and I think it even makes things more
-complicated. Not to mention that most of these "feature-rich" clients are also
-proprietary.
+I don't need this level of abstraction. I just need something simple that allows
+me to back up my notes to the cloud continuously while I type. Not to mention
+that most of these "feature-rich" clients are also proprietary.
 
 # rclone!
 
 I ran into [rclone](https://rclone.org/) and realized that it is exactly what I
-was looking for. `rclone` is simple but powerful, just like `rsync` but for
-"cloud storage".
+was looking for. `rclone` is simple but powerful. It is very similar to the
+`rsync` tool, but for "cloud storage".
 
-It not only takes care of integrity check, synchronization efficiency, etc., but also
-provides [a simple CRUD
+For example, it not only takes care of fault tolerance (integrity checks),
+efficient synchronization algorithms, etc., but also provides [a simple CRUD
 interface](https://github.com/ncw/rclone/blob/6b1f915ebccdf232cb128540ba67098b754282d6/fs/fs.go#L210-L244)
-to interact with popular cloud storage service including Amazon S3, Google
-Drive, and Dropbox.
+to interact with popular cloud storage services, including Amazon S3, Google
+Drive, and [Dropbox](https://rclone.org/dropbox/).
 
-[Here is the setup guide for Dropbox](https://rclone.org/dropbox/).
-
-The following command will make sure the remote directory `org` is identical
-with the local directory `/home/lpan/org`
+The following command will make the remote directory `org` identical with the
+local directory `/home/lpan/org`
 
 ```
 ORG_DIR=/home/lpan/org
@@ -90,24 +90,30 @@ rclone sync $ORG_DIR $REMOTE:org
 you to run a command triggered by file changes, without *polling* the file
 system.
 
-From their [documentation](http://eradman.com/entrproject/), one of the common
-usages is to *rebuild the project when any of the source files change*.
+One of its common usages is to *rebuild the project when any of the source file
+changes*.
+
+`entr` takes a list of absolute paths from `stdin`, and then it will execute a
+command, passed in as an `ARG`, when any of the watched file changes.
 
 ```
-ag -l | entr make
+WORKDIR=/path/to/myproject
+find $WORKDIR | grep "\.cpp$" | entr make
 ```
 
 # The one-liner script
 
 Now we learned about `rclone` and `entr`. The final script turned out to be very
-simple. To remind you about my use case of Dropbox, all I want is to
+simple. To remind you about my use case of Dropbox, all I want to do is to
 continuously replicate my local Org file changes to Dropbox. Therefore, we just
-need to use `entr` to watch the files we want to replicate, and then use
+need to use `entr` to watch the files that we want to replicate, and use
 `rclone` to "sync" them to the remote storage.
 
-The final script looks like something like this:
+The final script (`/home/lpan/sync_dropbox.sh`) looks like the following:
 
 ```
+#!/bin/bash
+
 ORG_DIR=/home/lpan/org
 REMOTE=dropbox
 
@@ -138,7 +144,7 @@ Restart=always
 WantedBy=default.target
 ```
 
-Then, I started by running
+Then, you can manage the daemon with the following commands
 
 ```
 # reload the service file
@@ -161,6 +167,12 @@ and open-source tools to replace the proprietary & deprecated Dropbox client. We
 talked about `rclone` and `entr`. I also showed you how I make this process a
 Daemon and manage it using `systemd`.
 
-Thanks so much for reading. I really hope you enjoy this post. Got a better way
-to do a similar job, or know how to extend the script for another use case? Let
+I want to remind you that the **key idea** of this post is _simplicity_. We want
+to solve our simple problems with simple solutions. My use case of Dropbox is
+very simple. And this is why one simple line of shell script would be a better
+solution than using a feature-rich, and possibly proprietary remote storage
+client.
+
+Thanks so much for reading! I really hope you enjoy this post. Got a better way
+to do the same job, or know how to extend the script for another use case? Let
 me know in the comment section below!
