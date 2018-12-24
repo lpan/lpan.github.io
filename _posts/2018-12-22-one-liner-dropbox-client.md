@@ -22,34 +22,37 @@ In early December, the proprietary Dropbox Linux client I have been using
 stopped working. It logged me out, and prompted me to choose a different sync
 folder on a "supported file system".
 
+By the way, I run Ubuntu bionic on a two-year-old Thinkpad t460s.
+
 # How I use Dropbox
 
-I live in Emacs, and I am a heavy [Org mode](https://orgmode.org/) user. My use
-case of Dropbox is basically "**continuously** backing up my org files".
+I am a heavy [Org mode](https://orgmode.org/) user. I take notes in plain text,
+and my use case of Dropbox is simply "continuously backing up my notes while I
+type".
 
-If you are also into data infrastructure, my use case of Dropbox is literally
-"asynchronous single-master replication for fault tolerance purposes". All
-writes go through my Thinkpad, the master. The remote Dropbox folder is just a
-read-only follower that I occasionally "issue read-only queries" to, or used as
-a backup to construct a new master when the current master fails or gets stolen.
+If you are also into data infrastructure, my use case is very similar to
+"asynchronous single-master replication". All writes go through my Thinkpad, the
+master. The remote Dropbox folder is just a read-only follower that I
+occasionally "issue read-only queries" to, or used as a backup to construct a
+new master when the current master fails or gets stolen.
 
 Nevertheless, this replication setup has saved my life multiple times. I still
 remember, very vividly, that my Thinkpad couldn't boot during the exam season at
-the end of my sophomore year. Since I continuously replicated my all notes to
-Dropbox, I didn't lose any data and I was able to view them on my mom's Macbook.
-Thank you mom!
+the end of my sophomore year. Since I continuously replicated all my notes to
+Dropbox, I didn't lose any data and I was able to view my latest notes on my
+mom's Macbook. Thanks mom!
 
 # My failed attempts
 
 When the Dropbox client stopped working, my main focus was to find another
-similarly feature-rich remote storage client for Linux. I just wanted something
-to work so I wouldn't mind migrating to another storage back-end, such as Google
-Drive or AWS S3. Some of the candidates that I poked around with include
+similarly feature-rich remote storage client for Linux. I also wouldn't mind
+migrating to another storage back-end, such as Google Drive or AWS S3. Some of
+the optioned I considered include
 [overGrive](https://www.thefanclub.co.za/overgrive) and
 [insync](https://www.insynchq.com/).
 
-However, I concluded at the end that these solutions are way too feature-rich,
-and not **well-suited for my use case**.
+However, I concluded that these solutions are way too feature-rich, and not
+**well-suited for my use case**.
 
 For example, these clients are modelled as *mounting a remote file system onto
 your file system*. They try really hard to abstract the remote file systems away
@@ -58,10 +61,11 @@ two-way syncing, automatically mapping remote file types to Linux file types,
 etc.
 
 I don't need this level of abstraction. I just need something simple that allows
-me to back up my notes to the cloud continuously while I type. Not to mention
-that most of these "feature-rich" clients are also proprietary.
+me to back up my notes to the cloud continuously while I type. In addition, the
+abstraction also makes it harder to set up and debug. Not to mention that most
+of these "feature-rich" clients are proprietary.
 
-# rclone!
+# rclone
 
 I ran into [rclone](https://rclone.org/) and realized that it is exactly what I
 was looking for. `rclone` is simple but powerful. It is very similar to the
