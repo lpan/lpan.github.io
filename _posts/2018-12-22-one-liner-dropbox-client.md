@@ -181,6 +181,6 @@ Thanks so much for reading! I really hope you enjoy this post. Got a better way
 to do the same job, or know how to extend the script for another use case? Let
 me know in the comment section below!
 
-**Edit 2018-12-24:** This article has been discuss on
+**Edit 2018-12-24:** This article has been discussed on [Hacker
+News](https://news.ycombinator.com/item?id=18750797) and
 [r/linux](https://www.reddit.com/r/linux/comments/a92m1u/my_oneliner_linux_dropbox_client/).
-Thanks @boi_from_the_loo for submitting!
