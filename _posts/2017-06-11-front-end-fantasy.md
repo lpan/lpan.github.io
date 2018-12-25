@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Front End Developer's Fantasy"
+title:  "A front-end developer's fantasy"
 date:   2017-06-11
 comments: true
 categories: programming
