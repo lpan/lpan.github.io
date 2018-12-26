@@ -4,7 +4,9 @@ title: About - Lawrence Pan
 permalink: /about/
 ---
 
-## About me
+# About me
+
+## Summary
 
 My name is Lawrence Pan (lpan) and I am a Software Engineering student at the
 University of Waterloo.
@@ -20,11 +22,9 @@ lifting weights, and reading books (listening to audio books).
 
 I also LOVE dogs, especially Golden Retrievers!
 
-<br>
-
 ## Work experience
 
-I have done quite a few internships so far...
+I have done four internships in the past.
 
 I interned as a front-end developer working with React and Redux. Did back-end
 work with Rails and MongoDB. I also got a chance to work on a low-latency data
