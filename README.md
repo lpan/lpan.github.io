@@ -1,2 +1,3 @@
-# My profile and resume
-This is the source of my awesome website (and blog) [lpan.io](http://lpan.io).
+# My Jekyll Blog
+
+This is the source of my website [lpan.io](http://lpan.io).
