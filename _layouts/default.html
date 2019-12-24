@@ -7,7 +7,11 @@
 
     {% include header.html %}
 
+    {% if page.url != "/" %}
     <div class="page-content">
+    {% else" %}
+    <div class="home-page-content">
+    {% endif %}
       <div class="wrapper">
         {{ content }}
       </div>
