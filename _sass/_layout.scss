@@ -133,6 +133,15 @@
 .post-content {
   margin-bottom: $spacing-unit;
 
+  h1 {
+    font-size: 24px;
+    padding-top: $spacing-unit / 2;
+
+    @include media-query($on-laptop) {
+      font-size: 20px;
+    }
+  }
+
   h2 {
     font-size: 32px;
 
