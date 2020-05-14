@@ -124,6 +124,21 @@ REMOTE=dropbox
 find $ORG_DIR | entr -r rclone sync -v $ORG_DIR $REMOTE:org
 ```
 
+**Edit 2020-05-13:** If you want to watch new files being added to the
+directory, you can use the `-d` flag provided by entr with an infinite loop, as
+shown below:
+
+```
+#!/bin/bash
+
+ORG_DIR=/home/lpan/org
+REMOTE=dropbox
+
+while true; do
+  find $ORG_DIR | entr -rd rclone sync -v $ORG_DIR $REMOTE:org
+end
+```
+
 # Make the script into a Daemon
 
 A [Daemon](https://en.wikipedia.org/wiki/Daemon_(computing)) is "just a computer
