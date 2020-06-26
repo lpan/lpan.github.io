@@ -1,2 +1,2 @@
-Hi there, my name is Lawrence and I study Computer Science at the University of
-Waterloo.
+I am currently trying to finish up my undergrad at the University of Waterloo. I
+live in Toronto.
