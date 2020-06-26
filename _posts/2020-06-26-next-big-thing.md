@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Next Big Thing"
+title:  "The next big thing"
 date:   2020-06-25
 comments: true
 categories: career
