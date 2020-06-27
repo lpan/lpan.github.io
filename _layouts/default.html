@@ -7,10 +7,10 @@
 
     {% include header.html %}
 
-    {% if page.url != "/" %}
-    <div class="page-content">
-    {% else" %}
+    {% if page.url == "/" %}
     <div class="home-page-content">
+    {% else" %}
+    <div class="page-content">
     {% endif %}
       <div class="wrapper">
         {{ content }}
