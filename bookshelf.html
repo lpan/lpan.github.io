@@ -1,0 +1,29 @@
+---
+layout: default
+title: "lpan's Bookshelf"
+---
+
+<div class="home">
+  <h1>Bookshelf</h1>
+  <p>
+    Trying to develop a reading habit, starting today (June 27, 2020).
+  </p>
+  <br />
+  <h2>Queued</h2>
+  <ul>
+    {% for book in site.data.books.queued %}
+    <li>
+      <a href="{{ book.link }}">{{ book.name }}</a> by {{ book.author }}
+    </li>
+    {% endfor %}
+  </ul>
+  <br />
+  <h2>Finished</h2>
+  <ul>
+    {% for book in site.data.books.read %}
+    <li>
+      <a href="{{ book.link }}">{{ book.name }}</a> by {{ book.author }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
