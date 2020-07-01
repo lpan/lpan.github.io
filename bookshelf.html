@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "lpan's Bookshelf"
+title: "Lawrence's Bookshelf"
 ---
 
 <div class="home">
@@ -15,15 +15,20 @@ title: "lpan's Bookshelf"
     <li>
       <a href="{{ book.link }}">{{ book.name }}</a> by {{ book.author }}
     </li>
+    <br />
     {% endfor %}
   </ul>
-  <br />
   <h2>Finished</h2>
   <ul>
     {% for book in site.data.books.read %}
     <li>
       <a href="{{ book.link }}">{{ book.name }}</a> by {{ book.author }}
+      <ul>
+        <li>Completed: {{ book.completed | date: '%B %d, %Y' }}</li>
+        <li><a href="/{{ book.reflection_permalink }}" target="_blank">Reflection</a></li>
+      </ul>
     </li>
+    <br />
     {% endfor %}
   </ul>
 </div>
