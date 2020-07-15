@@ -2,7 +2,7 @@
 layout: post
 title:  "[Reading Reflection] Zero to One"
 date:   2020-06-28
-comments: true
+comments: false
 categories: book
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "[Reading Reflection] Carbon Capture"
 date:   2020-06-30
-comments: true
+comments: false
 categories: book
 ---
 
