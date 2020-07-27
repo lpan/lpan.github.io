@@ -11,14 +11,14 @@ permalink: /bookshelf/
   </p>
   <br />
   <h2>Queued</h2>
-  <ul>
+  <ol>
     {% for book in site.data.books.queued %}
     <li>
       <a href="{{ book.link }}">{{ book.name }}</a> by {{ book.author }}
     </li>
     <br />
     {% endfor %}
-  </ul>
+  </ol>
   <h2>Finished</h2>
   <ul>
     {% for book in site.data.books.read %}
