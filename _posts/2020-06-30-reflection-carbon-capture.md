@@ -66,7 +66,3 @@ I also learned that the climate challenge is extremely *political*. The
 technology seems to be ready. But the bottleneck is public policies, which are
 influenced by the economy and the culture (how the voters perceive this). I
 wonder what we can do to contribute to this problem.
-
-&nbsp;
-
-Check out my [bookshelf](/bookshelf) for more reflections like this!

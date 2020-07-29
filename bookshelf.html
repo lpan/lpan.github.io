@@ -23,10 +23,10 @@ permalink: /bookshelf/
   <ul>
     {% for book in site.data.books.read %}
     <li>
-      <a href="{{ book.link }}">{{ book.name }}</a> by {{ book.author }}
+      <a href="{{ book.link }}">{{ book.name }}</a>
       <ul>
+        <li>by {{ book.author }}</li>
         <li>Completed: {{ book.completed | date: '%B %d, %Y' }}</li>
-        <li><a href="/{{ book.reflection_permalink }}" target="_blank">Reflection</a></li>
       </ul>
     </li>
     <br />

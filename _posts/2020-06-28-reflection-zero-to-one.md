@@ -39,7 +39,3 @@ consequently motivated me to write [this blog post]({% post_url
 
 I encourage everyone, especially university students studying CS, to give this
 book a read.
-
-&nbsp;
-
-Check out my [bookshelf](/bookshelf) for more reflections like this!

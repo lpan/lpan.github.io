@@ -1,18 +1,16 @@
 read:
-    - name: "Carbon Capture"
-      author: "Howard J. Herzog"
-      link: "https://www.amazon.com/Carbon-Capture-Press-Essential-Knowledge-ebook/dp/B07GQHR64C"
+    - name: Carbon Capture
+      author: Howard J. Herzog
+      link: "https://www.amazon.com/Carbon-Capture-Press-Essential-Knowledge/dp/0262535750"
       completed: 2020-06-30
-      reflection_permalink: "reflection-carbon-capture"
-    - name: "Zero to One"
-      author: "Peter Thiel"
+    - name: Zero to One
+      author: Peter Thiel
       link: "https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296"
       completed: 2020-06-20
-      reflection_permalink: "reflection-zero-to-one"
 queued:
     - name: The Revolt of the Public
-      author: "Martin Gurri"
+      author: Martin Gurri
       link: "https://www.amazon.com/Revolt-Public-Crisis-Authority-Millennium/dp/1732265143"
-    - name: "The Entrepreneurial State"
-      author: "Mariana Mazzucato"
+    - name: The Entrepreneurial State
+      author: Mariana Mazzucato
       link: "https://www.amazon.com/Entrepreneurial-State-Debunking-Public-Private-ebook/dp/B012271JCQ"
