@@ -1,16 +1,17 @@
 read:
-    - name: Carbon Capture
-      author: Howard J. Herzog
-      link: "https://www.amazon.com/Carbon-Capture-Press-Essential-Knowledge/dp/0262535750"
-      completed: 2020-06-30
     - name: Zero to One
       author: Peter Thiel
       link: "https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296"
       completed: 2020-06-20
-queued:
+    - name: Carbon Capture
+      author: Howard J. Herzog
+      link: "https://www.amazon.com/Carbon-Capture-Press-Essential-Knowledge/dp/0262535750"
+      completed: 2020-06-30
     - name: The Revolt of the Public
       author: Martin Gurri
       link: "https://www.amazon.com/Revolt-Public-Crisis-Authority-Millennium/dp/1732265143"
-    - name: The Entrepreneurial State
-      author: Mariana Mazzucato
-      link: "https://www.amazon.com/Entrepreneurial-State-Debunking-Public-Private-ebook/dp/B012271JCQ"
+      completed: 2020-08-18
+queued:
+    - name: "Working in Public: The Making and Maintenance of Open Source Software"
+      author: Nadia Eghbal
+      link: "https://www.amazon.com/Working-Public-Making-Maintenance-Software/dp/0578675862"
