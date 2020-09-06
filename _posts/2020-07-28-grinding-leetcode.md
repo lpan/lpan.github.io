@@ -7,17 +7,19 @@ comments: false
 categories: career
 ---
 
-When I was in my freshman year, I hated the technical interview process simply
-because I did not enjoy practicing Leetcode problems. It is one of those dumb
-things in college that if you don’t do it, others will get ahead of you.
+I have always hated the technical interview process, mostly because I don't
+enjoy practicing Leetcode problems.
 
-It was hard for a college kid to accept that life is unfair. Why do I need to do
-something I don’t like to get something I want? In one of my technical
-interviews during my freshman year, the interviewer asked me if I like
-algorithms when he greeted me since the interview was about testing my
-algorithmic skill (Leetcode skill). I told him to his face that I hate
-algorithms. I also made sure to mention that I thought his interview process was
-stupid. I didn’t get the job. Not too surprising!
+It is one of those dumb things in college that if you don’t do it, others will
+get ahead of you. If you want to secure those "prestigious internships", you
+have to grind Leetcode.
+
+Convincing myself to grind Leetcode was hard. It was hard to accept that life is
+unfair. Why do I need to do something I don’t like to get something I want? In
+one of my technical interviews during my freshman year, as an icebreaker, the
+interviewer asked if I like algorithms. I told him to his face that I hated
+algorithms.  I also made sure to mention that I believed all technical
+interviews were a waste of time. I didn’t get the job. Not too surprising!
 
 <br/>
 
@@ -25,10 +27,11 @@ stupid. I didn’t get the job. Not too surprising!
 
 <br/>
 
-Today, I am a fourth-year student about to graduate. I was on the phone chatting
-with a younger friend who was worried about his upcoming internship search. He
-asked me for advice because he thinks I am an expert at internship hunting. And
-of course, being extremely flattered, I told him to grind Leetcode.
+Today, I am a fourth-year student about to graduate. Not too long ago, I was on
+the phone chatting with a younger friend who was worried about his upcoming
+internship search. He asked me for advice because he thinks I am an expert at
+internship hunting. And of course, being extremely flattered, I told him to
+grind Leetcode.
 
 Pretty ironic right? Not to mention that the young lad also hates practicing
 Leetcode questions. He prefers building side projects, code that makes a
@@ -45,11 +48,11 @@ process](https://github.com/poteto/hiring-without-whiteboards).
 Coding is about translating one’s thought process into code. In the real world,
 software engineers translate business logic (what they want the computer to do)
 into maintainable and performant code. The purpose of whiteboard interviews is
-to ensure the candidate knows how to do this translation. They give you a
+to ensure that the candidate knows how to do this translation. They give you a
 specification in the form of a programming puzzle. Then, you translate it into
 code.
 
-Here is an example successful whiteboard interview from the candidate’s
+Here is an example of a successful whiteboard interview from the candidate’s
 perspective
 1. Understand the programming puzzle
 2. Come up with an algorithm to solve the puzzle
@@ -68,12 +71,12 @@ software engineering roles.
 
 So, should you grind Leetcode?
 
-I might be wrong, but here is my personal opinion. I believe that every student
+I might be wrong, but here are my two cents. I believe that every student
 interested in pursuing a software engineering career should do at least one
 internship at a "big shop" (Facebook, Google, Microsoft, Amazon, Apple, etc). At
 these companies, you will see what **good** looks like: world-class developer
-tools, mature engineering process, rigorous performance evaluation, etc. If
-those companies conduct Leetcode-style interviews, you should grind Leetcode. As
-of now, both Facebook and Google ask Leetcode-style questions in their software
-engineering internship interviews. If you want to work there (which I highly
-recommend), you should grind Leetcode.
+tools, mature product development process, rigorous performance review
+framework, etc. If those companies conduct Leetcode-style interviews, you should
+grind Leetcode. As of now, both Facebook and Google ask Leetcode-style questions
+in their software engineering internship interviews. If you want to work there,
+you should grind Leetcode.
