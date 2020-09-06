@@ -1,7 +1,7 @@
 ---
 useful: true
 layout: post
-title:  "Should I grind Leetcode?"
+title:  "Should you grind Leetcode?"
 date:   2020-07-28
 comments: false
 categories: career
