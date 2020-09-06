@@ -1,4 +1,5 @@
 ---
+useful: true
 layout: post
 title:  "What I learnt from coding a text editor in C"
 date:   2017-08-19

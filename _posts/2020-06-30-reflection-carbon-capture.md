@@ -1,4 +1,5 @@
 ---
+useful: true
 layout: post
 title:  "[Reading Reflection] Carbon Capture"
 date:   2020-06-30

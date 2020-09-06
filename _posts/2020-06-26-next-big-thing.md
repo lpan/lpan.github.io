@@ -1,4 +1,5 @@
 ---
+useful: true
 layout: post
 title:  "The next big thing"
 date:   2020-06-25

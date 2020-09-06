@@ -1,4 +1,5 @@
 ---
+useful: true
 layout: post
 title:  "My one-liner Linux Dropbox client"
 date:   2018-12-22

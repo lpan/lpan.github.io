@@ -19,18 +19,20 @@ layout: default
   <h1 class="page-heading">Posts</h1>
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
+    {% if post.useful %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
 
-        <br class="post-break">
+      <br class="post-break">
 
-        <span class="post-link">
-          <span>&rArr;</span>
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            {{ post.title }}
-          </a>
-        </span>
-      </li>
+      <span class="post-link">
+        <span>&rArr;</span>
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          {{ post.title }}
+        </a>
+      </span>
+    </li>
+    {% endif %}
     {% endfor %}
   </ul>
 </div>
