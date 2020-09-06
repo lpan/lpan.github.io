@@ -1,7 +1,7 @@
 ---
 useful: true
 layout: post
-title:  "[Reading Reflection] Carbon Capture"
+title:  "My first stab at Climate"
 date:   2020-06-30
 comments: false
 categories: book
@@ -10,9 +10,10 @@ categories: book
 For years, I have been hearing people talking about the problem of climate
 change. However, I never got the chance to dig into it, until recently I read
 Ryan Orbuch's [post](https://www.orbuch.com/carbon-removal/) on Carbon removal.
-This book was briefly mentioned in the post. I decided to give it a read because
-of the credibility of the author (MIT researcher spent 30 years in this field).
-This book is also my first stab at the climate tech rabbit hole.
+Orbuch's post briefly mentioned this book called ["Carbon
+Capture"](https://mitpress.mit.edu/books/carbon-capture). It caught my attention
+because of the credibility of the author (MIT researcher spent 30 years in this
+field). This book is also my first stab at the climate tech rabbit hole.
 
 Climate change is happening because we have emitted too much CO2. There are many
 ways to address it: mitigation (don't emit as much CO2), adaption (just change
