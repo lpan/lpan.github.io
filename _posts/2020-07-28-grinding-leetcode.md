@@ -25,17 +25,17 @@ stupid. I didn’t get the job. Not too surprising!
 
 <br/>
 
-Today I am a fourth-year student about to graduate. I was on the phone yesterday
-chatting with a younger friend who was stressed about his upcoming internship
-search. He asked me for advice because he thinks I am an expert at internship
-hunting. And of course, being extremely flattered, I told him to grind Leetcode.
+Today, I am a fourth-year student about to graduate. I was on the phone chatting
+with a younger friend who was worried about his upcoming internship search. He
+asked me for advice because he thinks I am an expert at internship hunting. And
+of course, being extremely flattered, I told him to grind Leetcode.
 
 Pretty ironic right? Not to mention that the young lad also hates practicing
 Leetcode questions. He prefers building side projects, code that makes a
 real-life impact.
 
-I told him, like how the seniors told me back in the days: life is hard; now go
-home and grind Leetcode.
+I told him, like how the seniors told me back in the days: life is hard; there
+is no shortcut; now go home and grind Leetcode.
 
 Did I change my mind? Not really. I still think grinding Leetcode is dumb. But
 it is a necessary evil until companies realize it is dumb. The good news is that
@@ -45,9 +45,9 @@ process](https://github.com/poteto/hiring-without-whiteboards).
 Coding is about translating one’s thought process into code. In the real world,
 software engineers translate business logic (what they want the computer to do)
 into maintainable and performant code. The purpose of whiteboard interviews is
-to ensure the candidate knows how to do this translation. They give you the
-specification in the form of a programming puzzle. Then, it is your
-responsibility to translate it into code.
+to ensure the candidate knows how to do this translation. They give you a
+specification in the form of a programming puzzle. Then, you translate it into
+code.
 
 Here is an example successful whiteboard interview from the candidate’s
 perspective
@@ -57,8 +57,23 @@ perspective
 
 In my opinion, only the third step somewhat reflects one’s real-world
 programming skills. Grinding Leetcode will help you to be good at all three
-steps. However, being good at the first two steps is not useful for software
-engineering roles.
+steps. However, being good at the first two steps is not very useful for most
+software engineering roles.
 
-So, should you grind Leetcode? You tell me.
+<br/>
 
+---
+
+<br/>
+
+So, should you grind Leetcode?
+
+I might be wrong, but here is my personal opinion. I believe that every student
+interested in pursuing a software engineering career should do at least one
+internship at a "big shop" (Facebook, Google, Microsoft, Amazon, Apple, etc). At
+these companies, you will see what **good** looks like: world-class developer
+tools, mature engineering process, rigorous performance evaluation, etc. If
+those companies conduct Leetcode-style interviews, you should grind Leetcode. As
+of now, both Facebook and Google ask Leetcode-style questions in their software
+engineering internship interviews. If you want to work there (which I highly
+recommend), you should grind Leetcode.
