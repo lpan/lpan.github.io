@@ -42,7 +42,11 @@ blog post, "Hello World". When I was reading the quote above just earlier today,
 I was shocked. It might sound stupid but it almost made me cry. I was no longer
 the adventurous, risk-taking, and ambitious me.
 
-&nbsp;
+<br/>
+
+---
+
+<br/>
 
 I first got into coding in 2015, purely because I wanted to build things. My
 high school at the time didn't offer any Computer Science courses, and I
@@ -80,7 +84,11 @@ make our world a bit better. He learned to code, decided to pursue tech, and
 went to the University of Waterloo to study Software Engineering. It all started
 in the summer of 2016. Now, four years later, what is he doing now?
 
-&nbsp;
+<br/>
+
+---
+
+<br/>
 
 I am here behind my four-year old laptop typing up this blog post (I bought this
 computer with the money I made from the job at Plotly right before I started
@@ -117,7 +125,11 @@ everyone seems to be into the same thing as I am. We shared a collective goal,
 and we motivated each other, implicitly via the impostor syndrome, to keep us on
 the grind.
 
-&nbsp;
+<br/>
+
+---
+
+<br/>
 
 I am way more capable than what I was four years ago. This is not limited to my
 technical abilities. I also learned how to break things down logically so I

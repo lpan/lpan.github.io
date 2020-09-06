@@ -136,6 +136,7 @@
   h1 {
     font-size: 24px;
     padding-top: $spacing-unit / 2;
+    margin-bottom: -1 * $spacing-unit / 2;
 
     @include media-query($on-laptop) {
       font-size: 20px;
@@ -168,5 +169,6 @@
 
   p {
     text-align: justify;
+    margin-top: $spacing-unit;
   }
 }
