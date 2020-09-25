@@ -19,9 +19,16 @@ layout: default
 
   <div class="post-content" itemprop="articleBody">
     {{ content }}
+
+    {% if page.comments == "twitter" %}
+    <br/>
+    <a href="https://twitter.com/search?q=https://lpan.io{{ page.url }}">
+      <em>Discuss this post on Twitter</em>
+    </a>
+    {% endif %}
   </div>
 
-  {% if page.comments %}
+  {% if page.comments == "disqus" %}
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {

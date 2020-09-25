@@ -2,7 +2,7 @@
 layout: post
 title:  "All aboard the gRPC train"
 date:   2018-05-22
-comments: true
+comments: disqus
 categories: programming
 ---
 
