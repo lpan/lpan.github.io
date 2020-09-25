@@ -71,23 +71,23 @@
   padding: $spacing-unit 0;
 }
 
-.home {
+.home > .writing {
   h2 {
     margin-top: $spacing-unit;
   }
 
   h4.divider {
-    margin: $spacing-unit;
+    margin: $spacing-unit $spacing-unit / 2;
+  }
+
+  p {
+    margin: $spacing-unit * 1.5 $spacing-unit / 2;
   }
 }
 
 .post-list {
-  margin-left: $spacing-unit;
+  margin-left: $spacing-unit / 2;
   list-style: none;
-
-  @include media-query($on-palm) {
-    margin-left: $spacing-unit / 2;
-  }
 
   > li {
     margin-bottom: $spacing-unit / 4;
