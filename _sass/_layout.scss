@@ -71,9 +71,14 @@
   padding: $spacing-unit 0;
 }
 
-.page-heading {
-  font-size: 20px;
-  margin-top: $spacing-unit;
+.home {
+  h2 {
+    margin-top: $spacing-unit;
+  }
+
+  h4.divider {
+    margin: $spacing-unit;
+  }
 }
 
 .post-list {

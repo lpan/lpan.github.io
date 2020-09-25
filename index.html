@@ -15,10 +15,12 @@ layout: default
     daily and will get back to you as soon as I can.
   </p>
 
-  <h1 class="page-heading">Posts</h1>
+  <h2>Writing</h2>
   <ul class="post-list">
     {% for post in site.posts %}
-    {% if post.useful %}
+
+    {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+    {% if post.useful and posttime > "1598832000" %}
     <li>
       <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
 
@@ -32,6 +34,30 @@ layout: default
       </span>
     </li>
     {% endif %}
+    {% endfor %}
+  </ul>
+
+  <h4 class="divider">---No longer a student as of Aug 1, 2020---</h4>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+
+    {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+    {% if post.useful and posttime < "1598832000" %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
+
+      <br class="post-break">
+
+      <span class="post-link">
+        <span>&rArr;</span>
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          {{ post.title }}
+        </a>
+      </span>
+    </li>
+    {% endif %}
+
     {% endfor %}
   </ul>
 </div>
