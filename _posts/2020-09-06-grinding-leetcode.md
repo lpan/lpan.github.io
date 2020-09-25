@@ -2,7 +2,7 @@
 useful: true
 layout: post
 title:  "Should you grind Leetcode?"
-date:   2020-07-28
+date:   2020-09-06
 comments: twitter
 categories: career
 ---
