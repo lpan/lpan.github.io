@@ -77,7 +77,11 @@
   }
 
   h4.divider {
-    margin: $spacing-unit $spacing-unit / 2;
+    margin: $spacing-unit;
+
+    @include media-query($on-palm) {
+      margin: $spacing-unit 0;
+    }
   }
 
   p {
@@ -86,8 +90,12 @@
 }
 
 .post-list {
-  margin-left: $spacing-unit / 2;
   list-style: none;
+
+  margin-left: $spacing-unit / 2;
+  @include media-query($on-palm) {
+    margin-left: 0;
+  }
 
   > li {
     margin-bottom: $spacing-unit / 4;
