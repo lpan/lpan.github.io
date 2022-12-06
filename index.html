@@ -8,41 +8,34 @@ layout: default
   </p>
 
   <p>
-    I would love to be helpful to you. The best way to reach out to me is
-    <a href="mailto:lawrencefeipan@gmail.com">via email</a>. I check my inbox
+    I live in San Francisco now. And I work at Stripe as a software engineer.
+    Before that, I studied Computer Science at the University of Waterloo and
+    did a bunch of internships.  Outside of work, I enjoy reading, riding my
+    bikes (I own 1 road bike and 3 e-bikes), cooking plant-based meals, going on
+    backpacking trips, roller skating in Golden Gate Park, and many other
+    things!
+  </p>
+
+  <p>
+    I would love to be helpful to you if I can. The best way to reach out to me
+    is <a href="mailto:lawrencefeipan@gmail.com">via email</a>. I check my inbox
     daily and will get back to you as soon as I can.
   </p>
 
+  <br/>
+
+  <p>
+    Lastly, here are some of my public blog posts. I do not write publicly
+    regularly, though I do enjoy writing and write often (private journals /
+    docs at work). Enjoy!
+  </p>
+
   <div class="writing">
-    <h2>Writing</h2>
-    <ul class="post-list">
-      {% for post in site.posts %}
-
-      {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-      {% if post.useful and posttime > "1598832000" %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
-
-        <br class="post-break">
-
-        <span class="post-link">
-          <span>&rArr;</span>
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            {{ post.title }}
-          </a>
-        </span>
-      </li>
-      {% endif %}
-      {% endfor %}
-    </ul>
-
-    <h4 class="divider">&#8595; written during my college years &#8595;</h4>
 
     <ul class="post-list">
       {% for post in site.posts %}
 
-      {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-      {% if post.useful and posttime < "1598832000" %}
+      {% if post.useful %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
 
