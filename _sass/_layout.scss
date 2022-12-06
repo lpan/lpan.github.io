@@ -103,7 +103,7 @@
     margin-bottom: $spacing-unit / 2;
 
     @include media-query($on-palm) {
-      grid-template-columns: 21vw 60vw;
+      grid-template-columns: 23vw 60vw;
       margin-bottom: $spacing-unit;
       // Using vw to better display on phones with various sizes
       // grid-template-columns: $spacing-unit * 3.5 $spacing-unit * 6.5;
