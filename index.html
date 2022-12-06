@@ -38,7 +38,7 @@ layout: default
 
       {% if post.useful %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
 
         <span class="post-link">
           <a href="{{ post.url | prepend: site.baseurl }}">
