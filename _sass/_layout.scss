@@ -30,11 +30,11 @@
 
     li {
       display: inline-block;
+      padding-right: 8px;
 
       .username {
         color: $grey-color-dark;
         position: relative;
-        right: 4px;
       }
 
       a:hover {
