@@ -71,6 +71,10 @@
   padding: $spacing-unit 0;
 }
 
+.home > p {
+  text-align: justify;
+}
+
 .home > .writing {
   h2 {
     margin-top: $spacing-unit;
