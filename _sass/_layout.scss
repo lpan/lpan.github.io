@@ -76,16 +76,12 @@
 }
 
 .home > .writing {
-  h2 {
-    margin-top: $spacing-unit;
+  margin-top: $spacing-unit;
+  @include media-query($on-palm) {
   }
 
-  h4.divider {
-    margin: $spacing-unit;
-
-    @include media-query($on-palm) {
-      margin: $spacing-unit 0;
-    }
+  h2 {
+    margin-top: $spacing-unit;
   }
 
   p {
@@ -102,21 +98,14 @@
   }
 
   > li {
-    margin-bottom: $spacing-unit / 4;
+    display: grid;
+    grid-template-columns: $spacing-unit * 4 $spacing-unit * 12;
+    margin-bottom: $spacing-unit / 2;
 
     @include media-query($on-palm) {
-      margin-bottom: $spacing-unit / 2;
-    }
-
-    .post-meta {
-      font-size: $small-font-size;
-    }
-
-    .post-break {
-      display: none;
-      @include media-query($on-palm) {
-        display: inline;
-      }
+      grid-template-columns: 30vw 55vw;
+      // Using vw to better display on phones with various sizes
+      // grid-template-columns: $spacing-unit * 3.5 $spacing-unit * 6.5;
     }
 
     .post-link {
