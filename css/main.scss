@@ -19,7 +19,11 @@ $spacing-unit:     30px;
 $double-spacing: $spacing-unit * 2;
 
 $text-color:       rgb(73, 66, 66);
-$background-color: rgb(244, 236, 216);;
+// Note that following color is Firefox reader view's Sepia theme, which I
+// really like. But decided not to use it because it shows too much effort.
+// Reminding that the goal of this design is the "effortless" look.
+// $background-color: rgb(244, 236, 216);;
+$background-color: #fdfdfd;
 $brand-color:      #4478c0;
 $brand-color-dark: darken($brand-color, 15%);
 
